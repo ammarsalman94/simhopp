@@ -9,11 +9,28 @@ namespace simhopp
 {
     public class Competitor
     {
+        //Declaring Variables
         private string name;
         private int    age;
         private int    id;
-        private int    jumps;
+        private int    jumps;      
         private List<JumpType>jumpList;
         private float  score;
+        
+        public void newCompetitor() // Creating new competitor
+        {
+            
+        }
+
+        public void JumpType() // The type of jump
+        {
+            
+        }
+
+        public Competitor() //Constructor
+        {
+            
+        }
+        
     }
 }

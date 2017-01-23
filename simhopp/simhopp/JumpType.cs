@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace simhopp
 {
-    public class JumpType
+    public class JumpType:Competitor
     {
+        private SortedDictionary<string, int> jumpStats;
     }
 }
+
