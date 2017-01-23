@@ -11,6 +11,12 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+        /// 
+        /// 
+        /// 
+        /// 
+        ///frans äger hela världen... suck ma nig dikk---------------------------------------()
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
