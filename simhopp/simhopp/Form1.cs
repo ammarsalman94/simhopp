@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //teständring
 //test igen
-
-//GayafFrans
+//test åt frans 11
+//Gayaf
 namespace simhopp
 {
     public partial class Form1 : Form

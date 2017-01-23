@@ -16,7 +16,7 @@
         /// 
         /// 
         /// 
-        ///frans äger hela världen... suck ma nig dikk---------------------------------------()
+        ///heajsan älskling
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
