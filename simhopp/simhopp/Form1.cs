@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //teständring
 //test igen
-
+//test åt frans
 //Gayaf
 namespace simhopp
 {
