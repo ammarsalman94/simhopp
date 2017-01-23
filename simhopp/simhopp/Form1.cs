@@ -10,7 +10,7 @@ using System.Windows.Forms;
 //teständring
 //test igen
 
-//Gayaf
+//GayafFrans
 namespace simhopp
 {
     public partial class Form1 : Form
