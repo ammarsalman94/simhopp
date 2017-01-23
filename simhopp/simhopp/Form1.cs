@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//teständring
-//kuk
+
 namespace simhopp
 {
     public partial class Form1 : Form
