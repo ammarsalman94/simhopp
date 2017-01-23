@@ -8,6 +8,7 @@ namespace simhopp
 {
     public class Judge
     {
-
+        private string name;
+        private float  score;
     }
 }

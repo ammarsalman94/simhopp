@@ -8,6 +8,10 @@ namespace simhopp
 {
     public class Competitor
     {
+        private string name;
+        private int    age;
+        private int    id;
+        private int    jumps;
 
     }
 }
