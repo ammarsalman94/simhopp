@@ -7,10 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//teständring
-//test igen
-//test åt frans 11
-//Gayaf
+
 namespace simhopp
 {
     public partial class Form1 : Form
