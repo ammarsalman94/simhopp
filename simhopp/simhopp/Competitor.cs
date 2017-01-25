@@ -13,7 +13,7 @@ namespace simhopp
         private string name;
         private int    age;
         private int    id;
-        private int    quantityOfJumps;
+        private int    qtyOfJumps;
         private float score;
         private List<JumpType>jumpList;
         

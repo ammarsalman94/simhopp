@@ -57,5 +57,16 @@ namespace simhopp
         {
 
         }
+        internal System.Windows.Forms.ComboBox ComboBox1;
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                comboBox1.Items.Add("history");
+                comboBox1.Items.Add("joke");
+                comboBox1.Items.Add("Bio");
+
+            }
+        }
     }
 }
