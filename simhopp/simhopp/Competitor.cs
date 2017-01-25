@@ -29,7 +29,7 @@ namespace simhopp
 
         }
 
-        
+         
         public void sendInfoToJudge() //send info about competitor to judge
         {
 
@@ -39,6 +39,7 @@ namespace simhopp
         {
             
         }
+
         
     }
 }
