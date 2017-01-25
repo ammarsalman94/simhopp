@@ -13,24 +13,33 @@ namespace simhopp
         private string name;
         private int    age;
         private int    id;
-        private int    jumps;      
+        private int    quantityOfJumps;
+        private float score;
         private List<JumpType>jumpList;
-        private float  score;
+        
         
         public void newCompetitor() // Creating new competitor
         {
             
         }
+        
 
-        public void JumpType() // The type of jump
+        public void countScore() //count score to competitor
         {
-            
+
+        }
+
+         
+        public void sendInfoToJudge() //send info about competitor to judge
+        {
+
         }
 
         public Competitor() //Constructor
         {
             
         }
+
         
     }
 }
