@@ -14,7 +14,7 @@ namespace UnitTestSimhopp
             Assert.AreEqual(true, false);
         }
         [TestMethod]
-        public void testJudge()
+        public void testJudge() 
         {
             var judge = new Judge();
             Assert.AreEqual(true, false);

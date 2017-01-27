@@ -14,13 +14,22 @@ namespace simhopp
         private int    age;
         private string    id;
         private int    qtyOfJumps;
-       // private float  score;
-        private List<Competitor>jumpList;
+        // private float  score;
+        private List<JumpType> competitor = new List<JumpType>();
         
-        
+        public void jump()
+        {
+
+        }
+
+        public void authenticate()
+        {
+
+        }
+
         public void addCompetitor() // Creating new competitor
         {
-            jumpList.Add(new Competitor() );
+            
         } 
 
         public int testCount()
@@ -42,13 +51,12 @@ namespace simhopp
 
         }
 
-        public Competitor() //Constructor
+        public Competitor(string name, int age, string id) //Constructor
         {
-            this.name = "Default";
-            this.age = 0;
-            this.id = "0000";
-
-
+            this.name = name;
+            this.age = age;
+            this.id = id;
+       
             //List<Competitor> jumplist = new List<Competitor>();
         }
 
