@@ -14,7 +14,8 @@ namespace simhopp
     {
         //Declaring variables
         private string name;
-        private List<string> CompetitorsList;
+        private List<Competition> competitor = new List<Competition>();
+        private List<Judge> Judge = new List<Judge>();
 
 
 

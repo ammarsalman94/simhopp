@@ -11,9 +11,10 @@ namespace UnitTestSimhopp
         public void testCompetition()
         {
             var game = new Competition();
+            Assert.AreEqual(true, false);
         }
         [TestMethod]
-        public void testJudge()
+        public void testJudge() 
         {
             var judge = new Judge();
             Assert.AreEqual(true, false);
@@ -22,8 +23,9 @@ namespace UnitTestSimhopp
         public void testCompetitor()
         {
             var competitor = new Competitor();
-            competitor.newCompetitor();
-            Assert.(1, true);
+            string s = (competitor.testCount().ToString());
+            Console.WriteLine("Test: ");
+            Assert.AreEqual(0, competitor.testCount());
 
         }
         [TestMethod]
