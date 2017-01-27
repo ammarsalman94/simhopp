@@ -25,7 +25,7 @@ namespace simhopp
 
         public void testEmpty()
         {
-
+      
         }
 
         public void countScore() //count score to competitor
