@@ -9,7 +9,7 @@ namespace simhopp
     public class Judge:Competitor
     {
         public string name;
-        public float  score;
+        public float  score; //Flytta
 
         public Judge()
         {
