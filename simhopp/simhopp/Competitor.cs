@@ -15,7 +15,7 @@ namespace simhopp
         private string    id;
         private int    qtyOfJumps;
         // private float  score;
-        private List<JumpType> competitor = new List<JumpType>();
+        private List<JumpType> competitorList = new List<JumpType>();
         
         public void jump()
         {
@@ -32,10 +32,10 @@ namespace simhopp
             
         } 
 
-        public int testCount()
+        public int testCount()  // Counts how many objects a list has.
         {
             int c = 0;
-            c = jumpList.Count();
+            c = competitorList.Count();
             return c;
               
         }

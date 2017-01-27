@@ -22,7 +22,7 @@ namespace UnitTestSimhopp
         [TestMethod]
         public void testCompetitor()
         {
-            var competitor = new Competitor();
+            var competitor = new Competitor("Frans", 12, "0000");
             string s = (competitor.testCount().ToString());
             Console.WriteLine("Test: ");
             Assert.AreEqual(0, competitor.testCount());
