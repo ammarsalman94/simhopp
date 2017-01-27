@@ -68,6 +68,7 @@
     <Compile Include="newCompForm.Designer.cs">
       <DependentUpon>newCompForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Points.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="addPlayerToContest.resx">

@@ -10,11 +10,11 @@ namespace simhopp
     public class Competitor
     {
         //Declaring Variables
-        private string name;
-        private int    age;
-        private int    id;
-        private int    qtyOfJumps;
-        private float  score;
+        private string name { get; set; } = ""; //default values and getters n setters.
+        private int    age { get; set; } = 0;
+        private int    id { get; set; } = 0;
+        private int    qtyOfJumps { get; set; } = 0;
+        private float  score { get; set; } = 0;
         private List<JumpType>jumpList;
         
         

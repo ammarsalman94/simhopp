@@ -31,7 +31,14 @@ namespace UnitTestSimhopp
             var jumpType = new JumpType();
             Assert.AreEqual(true, false);
         }
+        [TestMethod]
+        public void testPoints()
+        {
+            var points = new Points();
+            Assert.AreEqual(true, false);
+            points.getInfoJump();
 
+        }
     }
 
 }
