@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace simhopp
 {
-    public class Judge:Competitor
+    public class Judge
     {
         private string name;
         private float  score;
 
-        Judge()
+        public Judge()
         {
 
         }

@@ -19,7 +19,7 @@ namespace UnitTestSimhopp
             var judge = new Judge();
         }
         [TestMethod]
-        public void test()
+        public void testCompetitor()
         {
             var competitor = new Competitor();
         }
@@ -28,6 +28,7 @@ namespace UnitTestSimhopp
         {
             var jumpType = new JumpType();
         }
+
     }
 
 }
