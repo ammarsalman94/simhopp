@@ -11,6 +11,11 @@ namespace UnitTestSimhopp
         public void testCompetition()
         {
             var game = new Competition();
+
+
+
+     
+
         }
 
         [TestMethod]
