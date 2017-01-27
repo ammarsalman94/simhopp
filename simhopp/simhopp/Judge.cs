@@ -8,19 +8,19 @@ namespace simhopp
 {
     public class Judge:Competitor
     {
-        private string name;
-        private float  score;
-
-     
-        public void sendScoreToCompetitor()
-        {
-
-        }
+        public string name;
+        public float  score;
 
         public Judge()
         {
 
         }
+
+        public void sendScoreToCompetitor()
+        {
+
+        }
+
 
 
     }
