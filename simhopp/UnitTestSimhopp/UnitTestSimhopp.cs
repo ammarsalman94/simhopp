@@ -23,6 +23,7 @@ namespace UnitTestSimhopp
         {
             var competitor = new Competitor();
             Assert.AreEqual(true, false);
+          
         }
         [TestMethod]
         public void testJumpType()
