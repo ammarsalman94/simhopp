@@ -10,7 +10,7 @@ namespace simhopp
     {
         public string name;
         public float  score;
-
+        //bör inte innehålla poäng, utan bara information om dommaren.
         public Judge()
         {
 
