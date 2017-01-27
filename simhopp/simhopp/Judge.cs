@@ -11,7 +11,7 @@ namespace simhopp
         private string name;
         private float  score;
 
-        Judge()
+        public Judge()
         {
 
         }
