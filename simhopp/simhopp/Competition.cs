@@ -10,7 +10,7 @@ using System.Windows;
 namespace simhopp
 {
   
-    public class Competition:Competitor
+    public class Competition
     {
         //Declaring variables
         private string name;

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace simhopp
 {
-    public class Judge:Competitor
+    public class Judge
     {
         public string name;
-        public float  score;
-        //bör inte innehålla poäng, utan bara information om dommaren.
+        public float  score; //Flytta
+
         public Judge()
         {
 

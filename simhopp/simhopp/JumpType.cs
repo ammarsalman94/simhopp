@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace simhopp
 {
-    public class JumpType:Competitor
+    public class JumpType
     {
         private SortedDictionary<string, int> jumpStats; // jumpstats[0] == (volt, 10m)
         private SortedDictionary<int,string> startPos; // startPos[0] == (1, forward)
