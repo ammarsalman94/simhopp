@@ -31,7 +31,14 @@ namespace simhopp
         {
             
         } 
-        
+
+        public int testCount()
+        {
+            int c = 0;
+            c = jumpList.Count();
+            return c;
+              
+        }
 
         public void countScore() //count score to competitor
         {  
