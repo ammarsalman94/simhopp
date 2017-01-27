@@ -21,7 +21,7 @@ namespace simhopp
         public void newCompetitor() // Creating new competitor
         {
             
-        }
+        } 
         
 
         public void countScore() //count score to competitor

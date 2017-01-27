@@ -11,9 +11,7 @@ namespace UnitTestSimhopp
         public void testCompetition()
         {
             var game = new Competition();
-            Assert.AreEqual(true, false);
         }
-
         [TestMethod]
         public void testJudge()
         {
