@@ -10,19 +10,23 @@ namespace simhopp
     public class Competitor
     {
         //Declaring Variables
-        private string name { get; set; } = ""; //default values and getters n setters.
-        private int    age { get; set; } = 0;
-        private int    id { get; set; } = 0;
-        private int    qtyOfJumps { get; set; } = 0;
-        private float  score { get; set; } = 0;
-        private List<JumpType>jumpList;
+        private string name;
+        private int    age;
+        private string    id;
+        private int    qtyOfJumps;
+       // private float  score;
+        private List<Competitor>jumpList;
         
         
-        public void newCompetitor() // Creating new competitor
+        public void addCompetitor() // Creating new competitor
         {
-            
+            jumpList.Add(new Competitor() );
         } 
-        
+
+        public void testEmpty()
+        {
+
+        }
 
         public void countScore() //count score to competitor
         {  
@@ -37,7 +41,12 @@ namespace simhopp
 
         public Competitor() //Constructor
         {
-            
+            this.name = "Default";
+            this.age = 0;
+            this.id = "0000";
+
+
+            //List<Competitor> jumplist = new List<Competitor>();
         }
 
         
