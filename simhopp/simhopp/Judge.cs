@@ -16,6 +16,10 @@ namespace simhopp
 
         }
 
+        public void authenticate()
+        {
+
+        }
         public void sendScoreToCompetitor()
         {
 
