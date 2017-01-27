@@ -8,7 +8,7 @@ namespace simhopp
 {
     public class Points //class dealing with points in the competition
     {
-        private float points { get; set; } = 0; //getters n setters, plus default
+        private float points{ get; set; } = 0; //getters n setters, plus default
 
 
         public void getInfoJump() //getting information about the jump, height, type etc.
