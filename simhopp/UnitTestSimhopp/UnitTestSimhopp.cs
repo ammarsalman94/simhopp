@@ -24,7 +24,7 @@ namespace UnitTestSimhopp
         {
             var competitor = new Competitor();
             string s = (competitor.testCount().ToString());
-            Console.WriteLine(s);
+            Console.WriteLine("Test: ");
             Assert.AreEqual(0, competitor.testCount());
 
         }
