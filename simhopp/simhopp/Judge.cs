@@ -8,8 +8,8 @@ namespace simhopp
 {
     public class Judge
     {
-        private string name;
-        private float  score;
+        public string name;
+        public float  score; //Flytta
 
         public Judge()
         {

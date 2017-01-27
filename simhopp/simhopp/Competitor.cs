@@ -14,7 +14,7 @@ namespace simhopp
         private int    age;
         private int    id;
         private int    qtyOfJumps;
-        private float score;
+        private float  score;
         private List<JumpType>jumpList;
         
         
@@ -25,7 +25,7 @@ namespace simhopp
         
 
         public void countScore() //count score to competitor
-        {
+        {  
 
         }
 
