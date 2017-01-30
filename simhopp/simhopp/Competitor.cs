@@ -8,7 +8,7 @@ using System.Windows;
 namespace simhopp
 {
     public class Competitor
-    {
+    { 
         //Declaring Variables
         private string name;
         private int    age;
