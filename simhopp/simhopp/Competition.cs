@@ -26,5 +26,9 @@ namespace simhopp
 
         }
 
+        public void addCompetitor()
+        {
+
+        }
     }
 }
