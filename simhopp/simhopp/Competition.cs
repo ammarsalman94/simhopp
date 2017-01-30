@@ -13,18 +13,50 @@ namespace simhopp
     public class Competition
     {
         //Declaring variables
+        private int id;
         private string name;
-        private List<Competition> competitor = new List<Competition>();
-        private List<Judge> Judge = new List<Judge>();
+        private List<Competitor> competitorList = new List<Competitor>();
+        private List<Judge> judgeList = new List<Judge>();
+       
+
 
 
 
         //Functions
 
-        public Competition() //Creating competition
+        public Competition(string name, int id) //Creating competition
         {
+            this.id = id;
+            this.name = name;
 
         }
 
+        public void addCompetitorToList(Competitor obj)
+        {
+            competitorList.Add(obj);
+        }
+
+        public void addJudgeToList(Judge obj)
+        {
+            judgeList.Add(obj);
+        }
+
+        public int countJumps()
+        {
+            int count = 0;
+
+            count = competitorList.Count();
+
+            return count;
+        }
+
+        public int countJudges()
+        {
+            int count = 0;
+
+            count = judgeList.Count();
+
+            return count;
+        }
     }
 }

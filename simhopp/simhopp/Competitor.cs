@@ -8,14 +8,15 @@ using System.Windows;
 namespace simhopp
 {
     public class Competitor
-    {
+    { 
         //Declaring Variables
         private string name { get; set; } = "";
         private int    age { get; set; } = 0;
         private int    id { get; set; } = 0;
         private int    qtyOfJumps { get; set; } = 0;
+
         // private float  score;
-        private List<JumpType> competitorList = new List<JumpType>();
+        private List<JumpType> competitorJumps = new List<JumpType>();
 
         public Competitor(string name, int age, int id) //Constructor
         {
@@ -47,10 +48,11 @@ namespace simhopp
         {
             
         } 
+
         public int testCount()  // Counts how many objects a list has.
         {
             int c = 0;
-            c = competitorList.Count();
+            c = competitorJumps.Count();
             return c;
               
         }
