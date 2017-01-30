@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using simhopp;
 
@@ -22,9 +24,11 @@ namespace UnitTestSimhopp
         [TestMethod]
         public void testCompetitor()
         {
-            var competitor = new Competitor();
+            var competitor = new Competitor("Joel", 12, 1);
             string s = (competitor.testCount().ToString());
-            Console.WriteLine("Test: ");
+            Console.WriteLine($"Test: {s}");
+            //alternatively
+            Console.WriteLine("Test2: {0}",s);
             Assert.AreEqual(0, competitor.testCount());
 
         }
@@ -32,7 +36,8 @@ namespace UnitTestSimhopp
         public void testJumpType()
         {
             var jumpType = new JumpType();
-            Assert.AreEqual(true, false);
+            SortedDictionary<string,Int32> s = jumpType.addJumpInfo();
+            Console.WriteLine($"Test3: {s}");
         }
         [TestMethod]
         public void testPoints()

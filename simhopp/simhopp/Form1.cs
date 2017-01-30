@@ -10,9 +10,9 @@ using System.Windows.Forms;
 //teständring
 namespace simhopp
 {
-    public partial class Form1 : Form
+    public partial class DivingCompetition : Form
     {
-        public Form1()
+        public DivingCompetition()
         {
             InitializeComponent();
         }
