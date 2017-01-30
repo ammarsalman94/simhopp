@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace simhopp
 {
-    public class Judge
+    public class Judge : Points
     {
         private string name;
         private int age;
@@ -29,6 +29,12 @@ namespace simhopp
         public void sendScoreToCompetitor()
         {
 
+        }
+
+        public double setPoint()
+        {
+
+            return 0;
         }
 
 

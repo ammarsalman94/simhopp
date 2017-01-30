@@ -14,7 +14,7 @@ namespace UnitTestSimhopp
 
         public void testCompetition()
         {
-            var game = new Competition();
+            var game = new Competition("Wt-game", 1);
 
             //Test list for competitor if empty or not
             var competitor1 = new Competitor("Joel", 12, 1);
@@ -92,10 +92,15 @@ namespace UnitTestSimhopp
         public void testPoints()
         {
             var points = new Points();
-            Assert.AreEqual(true, false);
-            points.getInfoJump();
+
+            Assert.AreEqual(180, points.pointResult(1.6, 2, 6, 10, 34));
+            
+
+
+
 
         }
+
     }
 
 }
