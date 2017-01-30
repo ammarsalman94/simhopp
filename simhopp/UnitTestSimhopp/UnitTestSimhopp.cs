@@ -83,9 +83,27 @@ namespace UnitTestSimhopp
         public void testJumpType()
         {
             var jumpType = new JumpType();
-            SortedDictionary<string, List<int>> s = jumpType.addjumpStats();
-            Console.WriteLine(jumpType.ShowContents());
-           // Assert.AreEqual(10,jumpType.addJumpInfo().Values);
+
+            Console.WriteLine("-----     StartPos[0]       -----");
+            SortedDictionary<int, string> s = jumpType.addStartPos();
+            Console.WriteLine(jumpType.ShowContentsStartPos());
+
+            Console.WriteLine("-----     jumpCombo[1]       -----");
+            SortedDictionary<int, List<string>> d = jumpType.addjumpCombination();
+            Console.WriteLine(jumpType.ShowContentsjumpCombination());
+
+            Console.WriteLine("-----     qtyFlips[2]       -----");
+            SortedDictionary<int,double> e = jumpType.addqtyFlips();
+            Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
+
+            Console.WriteLine("-----     qtyScrews[3]       -----");
+            SortedDictionary<int, List<double>> h = jumpType.addqtyScrews();
+            Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
+
+            Console.WriteLine("-----     jumpstats[4]       -----");
+            SortedDictionary<string, List<double>> g = jumpType.addjumpStats();
+            Console.WriteLine(jumpType.ShowContentsjumpStats());
+
         }
 
         [TestMethod]
