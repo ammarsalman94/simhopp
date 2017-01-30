@@ -70,13 +70,8 @@ namespace UnitTestSimhopp
             string s1 = (competitor.testCount().ToString());
             Console.WriteLine($"Test1: {s1}");
 
-
-   
-
             //Try
             Assert.AreEqual(0, competitor.testCount());
-
-
         }
 
         [TestMethod]

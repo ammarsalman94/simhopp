@@ -145,7 +145,7 @@ namespace simhopp
                 jumpCombination[6].Add("Bakåt");
                 jumpCombination[6].Add("Mellanhopp");
 
-
+            
             return jumpCombination;
         }
         public string ShowContentsaddqtyFlips() // Printing the information in qtyFlips
