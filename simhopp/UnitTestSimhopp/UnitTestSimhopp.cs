@@ -14,7 +14,7 @@ namespace UnitTestSimhopp
 
         public void testCompetition()
         {
-            var game = new Competition("joel",12);
+            var game = new Competition("Wt-game", 1);
 
             //Test list for competitor if empty or not
             var competitor1 = new Competitor("Joel", 12, 1);
@@ -83,36 +83,24 @@ namespace UnitTestSimhopp
         public void testJumpType()
         {
             var jumpType = new JumpType();
-            SortedDictionary<string, List<double>> s = jumpType.addjumpStats();
-
-            SortedDictionary<int, string> d = jumpType.addStartPos();
-
-            SortedDictionary<int, List<string>> e = jumpType.addjumpCombination();
-
-            SortedDictionary<int, double> f = jumpType.addqtyFlips();
-
-            SortedDictionary<int, List<double>> h = jumpType.addqtyScrews();
-            Console.WriteLine("----- StartPos [0] -----");
-            Console.WriteLine(jumpType.ShowContentsStartPos());
-            Console.WriteLine("----- jumpCombination [1] -----");
-            Console.WriteLine(jumpType.ShowContentsjumpCombination());
-            Console.WriteLine("----- QtyFlips [2] -----");
-            Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
-            Console.WriteLine("----- QtyScrews [3] -----");
-            Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
-            Console.WriteLine("----- JumpStats [4] -----");
-            Console.WriteLine(jumpType.ShowContentsjumpStats());
-            // Assert.AreEqual(10,jumpType.addJumpInfo().Values);
+            SortedDictionary<string, List<int>> s = jumpType.addjumpStats();
+            Console.WriteLine(jumpType.ShowContents());
+           // Assert.AreEqual(10,jumpType.addJumpInfo().Values);
         }
 
         [TestMethod]
         public void testPoints()
         {
             var points = new Points();
-            Assert.AreEqual(true, false);
-            points.getInfoJump();
+
+            Assert.AreEqual(180, points.pointResult(1.6, 2, 6, 10, 34));
+            
+
+
+
 
         }
+
     }
 
 }
