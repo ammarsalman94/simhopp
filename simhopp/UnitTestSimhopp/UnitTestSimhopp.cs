@@ -36,8 +36,9 @@ namespace UnitTestSimhopp
         public void testJumpType()
         {
             var jumpType = new JumpType();
-            SortedDictionary<string,Int32> s = jumpType.addJumpInfo();
-            Console.WriteLine($"Test3: {s}");
+            SortedDictionary<string, List<int>> s = jumpType.addjumpStats();
+            Console.WriteLine(jumpType.ShowContents());
+           // Assert.AreEqual(10,jumpType.addJumpInfo().Values);
         }
         [TestMethod]
         public void testPoints()
