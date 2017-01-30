@@ -21,14 +21,32 @@ namespace simhopp
             
         }
 
-        public void pointCalculation() //algorithms calculating points given.
-        {
-            
-        }
 
-        public void pointResult(float points) //returning the result to the judge
+        public double pointResult(double j1,double j2,double j3, double j4, double j5) //returning the result to the judge
         {
-            
+            double n = 0;
+            double difficulty = 10;
+            List<double> pointList = new List<double>();
+            pointList.Add(j1);
+            pointList.Add(j2);
+            pointList.Add(j3);
+            pointList.Add(j4);
+            pointList.Add(j5);
+
+            pointList.Remove(pointList.Max());
+            pointList.Remove(pointList.Min());
+
+           n =  pointList.Sum() * difficulty;
+
+
+            return n;
+
+
         } 
+
+        public void getPoints()
+        {
+
+        }
     }
 }
