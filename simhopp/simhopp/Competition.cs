@@ -14,8 +14,9 @@ namespace simhopp
     {
         //Declaring variables
         private string name;
-        private List<Competition> competitor = new List<Competition>();
+       // private List<Competition> competition = new List<Competition>();
         private List<Judge> Judge = new List<Judge>();
+        private List<Competitor> competitor = new List<Competitor>(); 
 
 
 
@@ -25,6 +26,19 @@ namespace simhopp
         {
 
         }
+
+        private int countCompetitors()
+        {
+            int count = 0;
+
+            for (int i = 0; i < competitor.Count(); i++)
+            {
+                count++;
+            }
+            return count;
+        }
+
+
 
     }
 }

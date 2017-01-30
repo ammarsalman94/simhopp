@@ -14,6 +14,7 @@ namespace simhopp
         private int    age { get; set; } = 0;
         private int    id { get; set; } = 0;
         private int    qtyOfJumps { get; set; } = 0;
+
         // private float  score;
         private List<JumpType> competitorList = new List<JumpType>();
 
@@ -47,6 +48,7 @@ namespace simhopp
         {
             
         } 
+
         public int testCount()  // Counts how many objects a list has.
         {
             int c = 0;
