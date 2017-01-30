@@ -9,46 +9,73 @@ namespace UnitTestSimhopp
     [TestClass]
     public class UnitTestSimhopp
     {
+
         [TestMethod]
+
         public void testCompetition()
         {
             var game = new Competition();
-            Assert.AreEqual(true, false);
+
+            //Test list for competitor if empty or not
+            var competitor1 = new Competitor("Joel", 12, 1);
+            var competitor2 = new Competitor("frans", 12, 2);
+            var competitor3 = new Competitor("anden", 12, 3);
+            var competitor4 = new Competitor("carl", 12, 4);
+            var competitor5 = new Competitor("bertil", 12, 5);
+            var competitor6 = new Competitor("kjell", 14, 6);
+
+            game.addCompetitorToList(competitor1);
+            game.addCompetitorToList(competitor2);
+            game.addCompetitorToList(competitor3);
+            game.addCompetitorToList(competitor4);
+            game.addCompetitorToList(competitor5);
+            game.addCompetitorToList(competitor6);
+
+            Assert.AreEqual(6, game.countJumps());
+
+            //Test list for judges if empty or not
+            var judge1 = new Judge("Joel", 12, 1);
+            var judge2 = new Judge("frans", 12, 2);
+            var judge3 = new Judge("anden", 12, 3);
+            var judge4 = new Judge("carl", 12, 4);
+            var judge5 = new Judge("bertil", 12, 5);
+            var judge6 = new Judge("kjell", 14, 6);
+
+            game.addJudgeToList(judge1);
+            game.addJudgeToList(judge2);
+            game.addJudgeToList(judge3);
+            game.addJudgeToList(judge4);
+            game.addJudgeToList(judge5);
+            game.addJudgeToList(judge6);
+
+            Assert.AreEqual(6, game.countJudges());
+
         }
+
         [TestMethod]
         public void testJudge() 
         {
-            var judge = new Judge();
+            //competitor 1
+            var judge = new Competitor("Joel", 12, 1);
+            string s1 = (judge.testCount().ToString());
+
             Assert.AreEqual(true, false);
         }
+
         [TestMethod]
         public void testCompetitor()
         {
             //competitor 1
-            var competitor1 = new Competitor("Joel", 12, 1);
-
-            string s1 = (competitor1.testCount().ToString());
+            var competitor = new Competitor("Joel", 12, 1);
+            string s1 = (competitor.testCount().ToString());
             Console.WriteLine($"Test1: {s1}");
 
 
-            //competitor 2
-            var competitor2 = new Competitor("Frans", 20, 2);
-            string s2 = (competitor2.testCount().ToString());
-            Console.WriteLine($"Test2: {s2}");
-
-            //competiror 3
-            var competitor3 = new Competitor("Olle", 9, 3);
-            string s3 = (competitor3.testCount().ToString());
-
-            //competitor 4
-            var competitor4 = new Competitor("anden", 99, 4);
-            string s4 = (competitor4.testCount().ToString());
+   
 
             //Try
-            Assert.AreEqual(0, competitor1.testCount());
-            Assert.AreEqual(0, competitor2.testCount());
-            Assert.AreEqual(0, competitor3.testCount());
-            Assert.AreEqual(0, competitor4.testCount());
+            Assert.AreEqual(0, competitor.testCount());
+
 
         }
 
