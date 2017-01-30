@@ -31,17 +31,17 @@ namespace simhopp
 
         }
 
-        public void addCompetitorToList(Competitor obj)
+        public void addCompetitorToList(Competitor obj)// add a comptetitor to a list of competitor
         {
             competitorList.Add(obj);
         }
 
-        public void addJudgeToList(Judge obj)
+        public void addJudgeToList(Judge obj)// adds a judge to a list o judges
         {
             judgeList.Add(obj);
         }
 
-        public int countJumps()
+        public int countJumps()//counts amount of jumps
         {
             int count = 0;
 
@@ -50,7 +50,7 @@ namespace simhopp
             return count;
         }
 
-        public int countJudges()
+        public int countJudges()// count amount of  judges
         {
             int count = 0;
 
