@@ -59,7 +59,7 @@ namespace simhopp
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-    
+            comboBox1.DataSource = new JumpType().addqtyFlips();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace simhopp
         {
             double n = 0;
             double difficulty = 10;
-            List<double> pointList = new List<double>();
+            List<double> pointList = new List<double>(); 
             pointList.Add(j1);
             pointList.Add(j2);
             pointList.Add(j3);

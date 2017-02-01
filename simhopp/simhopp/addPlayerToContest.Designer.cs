@@ -1,4 +1,6 @@
-﻿namespace simhopp
+﻿using System.Windows.Forms;
+
+namespace simhopp
 {
     partial class addPlayerToContest
     {
@@ -28,19 +30,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.jumpTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 30);
+            this.textBox1.Location = new System.Drawing.Point(267, 107);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 0;
@@ -48,7 +54,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(90, 99);
+            this.textBox2.Location = new System.Drawing.Point(267, 155);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 26);
             this.textBox2.TabIndex = 1;
@@ -57,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 36);
+            this.label1.Location = new System.Drawing.Point(191, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 2;
@@ -67,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 105);
+            this.label2.Location = new System.Drawing.Point(204, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 20);
             this.label2.TabIndex = 3;
@@ -76,7 +82,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(349, 358);
+            this.button1.Location = new System.Drawing.Point(267, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 45);
             this.button1.TabIndex = 4;
@@ -86,15 +92,17 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.jumpTypeBindingSource;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Volt",
-            "Front-flip"});
-            this.comboBox1.Location = new System.Drawing.Point(90, 240);
+            this.comboBox1.Location = new System.Drawing.Point(31, 240);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // jumpTypeBindingSource
+            // 
+            this.jumpTypeBindingSource.DataSource = typeof(simhopp.JumpType);
             // 
             // comboBox2
             // 
@@ -103,7 +111,7 @@
             "7.5m",
             "10m",
             "12m"});
-            this.comboBox2.Location = new System.Drawing.Point(275, 240);
+            this.comboBox2.Location = new System.Drawing.Point(185, 240);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 28);
             this.comboBox2.TabIndex = 6;
@@ -116,16 +124,29 @@
             "Standing",
             "Handstand",
             "Trampoline"});
-            this.comboBox3.Location = new System.Drawing.Point(462, 240);
+            this.comboBox3.Location = new System.Drawing.Point(482, 240);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 28);
             this.comboBox3.TabIndex = 7;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Standing",
+            "Handstand",
+            "Trampoline"});
+            this.comboBox4.Location = new System.Drawing.Point(335, 240);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 28);
+            this.comboBox4.TabIndex = 8;
             // 
             // addPlayerToContest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 464);
+            this.ClientSize = new System.Drawing.Size(627, 464);
+            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -137,6 +158,7 @@
             this.Name = "addPlayerToContest";
             this.Text = "addPlayerToContest";
             this.Load += new System.EventHandler(this.addPlayerToContest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +174,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private BindingSource jumpTypeBindingSource;
     }
 }
