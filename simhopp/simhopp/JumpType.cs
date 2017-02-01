@@ -9,10 +9,11 @@ namespace simhopp
 {
     public class JumpType
     {
-        SortedDictionary<string, List<double>> jumpStats = new SortedDictionary<string,List<double>>(); // jumpstats[0] == (volt, 10m)
+        SortedDictionary<string, string> jumpStats = new SortedDictionary<string, string>(); // jumpstats[0] == (volt, 10m)
         SortedDictionary<int,string> startPos = new SortedDictionary<int, string>(); // startPos[0] == (1, forward)
         SortedDictionary<int, List<string>> jumpCombination = new SortedDictionary<int, List<string>>(); // jumpCombination[0] == (1, flygande)
         SortedDictionary<int, double> qtyFlips = new SortedDictionary<int, double>();
+        SortedDictionary<int, double> jumpHeight = new SortedDictionary<int, double>();
         SortedDictionary<int, List<double>> qtyScrews = new SortedDictionary<int, List<double>>(); // qtyScrews[5/6] == (4/5, 0.5 increments)
         public int testCount()  // Counts how many objects a list has.
         {
@@ -21,63 +22,67 @@ namespace simhopp
             return c;
 
         }
-
+        //jumpStats
         public string ShowContentsjumpStats()
         {
             var sb = new StringBuilder();
-            foreach (KeyValuePair<string, List<double>> item in jumpStats)
+            foreach (KeyValuePair<string, string> item in jumpStats)
             {
-                sb.Append(string.Format("{0}: has {1} entries with values {2} \n", item.Key, item.Value.Count(), string.Join(",", item.Value)));
+                sb.Append(string.Format("key {0} is {1} \n", item.Key, item.Value));
             }
             return sb.ToString();
+            //    var str1 = "";
+            //    var str2 = "";
+            //    foreach (KeyValuePair<string, List<int>> item in jumpStats)
+            //    {
+            //        str1 = $"{item.Key} , has {item.Value.Count()} entries with the values: ";
+            //        foreach (var item2 in item.Value)
+            //        {
+            //            str2 += $"{item2} ";
+            //        }
 
-        //    var str1 = "";
-        //    var str2 = "";
-        //    foreach (KeyValuePair<string, List<int>> item in jumpStats)
-        //    {
-        //        str1 = $"{item.Key} , has {item.Value.Count()} entries with the values: ";
-        //        foreach (var item2 in item.Value)
-        //        {
-        //            str2 += $"{item2} ";
-        //        }
-               
-        //    }
-        //    return  "" + str1 + str2;
+            //    }
+            //    return  "" + str1 + str2;
         }
-        public SortedDictionary<string,List<double>> addjumpStats() //Adding information about the jumpStyle to the dictionary
+        public SortedDictionary<string,string> addjumpStats() //Adding information about the jumpStyle to the dictionary
         {
             try
             {
-                jumpStats.Add("Rak", new List<double>()); // A
-                jumpStats["Rak"].Add(1);
-                jumpStats["Rak"].Add(3);
-                jumpStats["Rak"].Add(5);
-                jumpStats["Rak"].Add(7.5);
-                jumpStats["Rak"].Add(10);
+                //jumpStats.Add("Rak", new List<double>()); // A
+                //jumpStats["Rak"].Add(1);
+                //jumpStats["Rak"].Add(3);
+                //jumpStats["Rak"].Add(5);
+                //jumpStats["Rak"].Add(7.5);
+                //jumpStats["Rak"].Add(10);
 
-                jumpStats.Add("Pik", new List<double>()); // B
-                jumpStats["Pik"].Add(1);
-                jumpStats["Pik"].Add(3);
-                jumpStats["Pik"].Add(5);
-                jumpStats["Pik"].Add(7.5);
-                jumpStats["Pik"].Add(10);
+                //jumpStats.Add("Pik", new List<double>()); // B
+                //jumpStats["Pik"].Add(1);
+                //jumpStats["Pik"].Add(3);
+                //jumpStats["Pik"].Add(5);
+                //jumpStats["Pik"].Add(7.5);
+                //jumpStats["Pik"].Add(10);
 
-                jumpStats.Add("Gruppering", new List<double>()); // C
-                jumpStats["Gruppering"].Add(1);
-                jumpStats["Gruppering"].Add(3);
-                jumpStats["Gruppering"].Add(5);
-                jumpStats["Gruppering"].Add(7.5);
-                jumpStats["Gruppering"].Add(10);
+                //jumpStats.Add("Gruppering", new List<double>()); // C
+                //jumpStats["Gruppering"].Add(1);
+                //jumpStats["Gruppering"].Add(3);
+                //jumpStats["Gruppering"].Add(5);
+                //jumpStats["Gruppering"].Add(7.5);
+                //jumpStats["Gruppering"].Add(10);
 
-                jumpStats.Add("Valfri", new List<double>()); // D
-                jumpStats["Valfri"].Add(1);
-                jumpStats["Valfri"].Add(3);
-                jumpStats["Valfri"].Add(5);
-                jumpStats["Valfri"].Add(7.5);
-                jumpStats["Valfri"].Add(10);
+                //jumpStats.Add("Valfri", new List<double>()); // D
+                //jumpStats["Valfri"].Add(1);
+                //jumpStats["Valfri"].Add(3);
+                //jumpStats["Valfri"].Add(5);
+                //jumpStats["Valfri"].Add(7.5);
+                //jumpStats["Valfri"].Add(10);
+
+                jumpStats.Add("A", "Rak");
+                jumpStats.Add("B", "Pik");
+                jumpStats.Add("C", "Gruppering");
+                jumpStats.Add("D", "Valfri");
 
                 //END OF JumpStats
-                
+
             }
             catch (ArgumentException)
             {
@@ -85,7 +90,7 @@ namespace simhopp
             }
             return jumpStats;
         }
-
+        //startPos
         public string ShowContentsStartPos() //printing elements in Class
         {
             var sb = new StringBuilder();
@@ -95,7 +100,6 @@ namespace simhopp
             }
             return sb.ToString();
         }
-
         public SortedDictionary<int, string> addStartPos() // Adding information to the startPos Dictionary
         {
            
@@ -108,7 +112,7 @@ namespace simhopp
                 
             return startPos;
         }
-
+        //jumpCombination
         public string ShowContentsjumpCombination() // Printing elements in jumpCombination
         {
          
@@ -120,7 +124,6 @@ namespace simhopp
             return sb.ToString();
 
         }
-
         public SortedDictionary<int, List<string>> addjumpCombination() // Adding information to the jumpCombination dictionary
         {
             jumpCombination.Add(1, new List<string>());
@@ -148,6 +151,7 @@ namespace simhopp
             
             return jumpCombination;
         }
+        //qtyFlipps
         public string ShowContentsaddqtyFlips() // Printing the information in qtyFlips
         {
 
@@ -175,7 +179,35 @@ namespace simhopp
 
             return qtyFlips;
         }
+        //jumpHeight
+        public string ShowContentsaddjumpHeight() // Printing the information in jumpHeight
+        {
 
+            var sb = new StringBuilder();
+            foreach (KeyValuePair<int, double> item in jumpHeight)
+            {
+                sb.Append(string.Format("id {0} are {1} height \n", item.Key, item.Value));
+            }
+            return sb.ToString();
+
+        }
+        public SortedDictionary<int, double> addjumpHeight() // Adding information to the qtyFlips dictionary
+        {
+            jumpHeight.Add(1, 0);
+            jumpHeight.Add(2, 0.5);
+            jumpHeight.Add(3, 1);
+            jumpHeight.Add(4, 1.5);
+            jumpHeight.Add(5, 2);
+            jumpHeight.Add(6, 2.5);
+            jumpHeight.Add(7, 3);
+            jumpHeight.Add(8, 3.5);
+            jumpHeight.Add(9, 4);
+            jumpHeight.Add(10, 4.5);
+            jumpHeight.Add(11, 5);
+
+            return jumpHeight;
+        }
+        //qtyScrews
         public string ShowContentsaddqtyScrews() // Printing the information in qtyScrews, exclusively to id's 5 & 6
         {
 

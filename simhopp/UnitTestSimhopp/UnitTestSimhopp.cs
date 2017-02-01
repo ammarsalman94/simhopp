@@ -96,8 +96,12 @@ namespace UnitTestSimhopp
             Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
 
             Console.WriteLine("-----     jumpstats[4]       -----");
-            SortedDictionary<string, List<double>> g = jumpType.addjumpStats();
+            SortedDictionary<string, string> g = jumpType.addjumpStats();
             Console.WriteLine(jumpType.ShowContentsjumpStats());
+
+            Console.WriteLine("-----     jumpHeight[5]       -----");
+            SortedDictionary<int, double> f = jumpType.addjumpHeight();
+            Console.WriteLine(jumpType.ShowContentsaddjumpHeight());
 
         }
 
