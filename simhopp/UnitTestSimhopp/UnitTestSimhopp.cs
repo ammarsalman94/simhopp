@@ -224,5 +224,35 @@ namespace UnitTestSimhopp
         }
 
 
+
+        [TestMethod]
+
+        public void testOldcompetition()
+        {
+
+            var oldcompetition = new StoreCompetition();
+
+            var game1 = new Competition("Wt-game1");
+            var game2= new Competition("Wt-game2");
+            var game3 = new Competition("Wt-game3");
+            var game4 = new Competition("Wt-game4");
+            var game5 = new Competition("Wt-game5");
+            var game6 = new Competition("Wt-game6");
+
+            oldcompetition.addCompetition(game1);
+            oldcompetition.addCompetition(game2);
+            oldcompetition.addCompetition(game3);
+            oldcompetition.addCompetition(game4);
+            oldcompetition.addCompetition(game5);
+            oldcompetition.addCompetition(game6);
+
+
+
+
+
+
+            Assert.AreEqual(6, oldcompetition.countOldCompetitions());
         }
+
+    }
 }

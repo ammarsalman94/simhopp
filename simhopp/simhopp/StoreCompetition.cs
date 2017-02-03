@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace simhopp
 {
-    class StoreCompetition
+    public class StoreCompetition
     {
-        private List<Competition> competitionList = new List<Competition>();
+
+        public List<Competition> oldCompetitionList = new List<Competition>();
 
         public void addCompetition(Competition obj)
         {
-            competitionList.Add(obj);
+            oldCompetitionList.Add(obj);
         }
 
         public void printCompetitionList()
         {
             Console.WriteLine("Oldcompetitorlist");
 
-            foreach (var obj in competitionList)
+            foreach (var obj in oldCompetitionList)
             {
                 Console.WriteLine($"test: { obj.name.ToString()} , { obj.id.ToString()}");
             }
@@ -39,13 +40,24 @@ namespace simhopp
         public void removeCompetittionFromList(int unId)
         {
 
-            for (int i = competitionList.Count - 1; i >= 0; i--)
+            for (int i = oldCompetitionList.Count - 1; i >= 0; i--)
             {
-                if (competitionList[i].id == unId)
+                if (oldCompetitionList[i].id == unId)
                 {
-                    competitionList.RemoveAt(i);
+                    oldCompetitionList.RemoveAt(i);
                 }
             }
+        }
+
+
+
+        public int countOldCompetitions()//counts amount of jumps
+        {
+            int count = 0;
+
+            count = oldCompetitionList.Count();
+
+            return count;
         }
     }
 }
