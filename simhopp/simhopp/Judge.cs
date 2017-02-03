@@ -9,9 +9,9 @@ namespace simhopp
     public class Judge : Points
     {
         static int judgeId = 1;
-        private string name;
-        private int age;
-        private int id;
+        public string name;
+        public int age;
+        public int id;
 
         public float  score; //Flytta
 

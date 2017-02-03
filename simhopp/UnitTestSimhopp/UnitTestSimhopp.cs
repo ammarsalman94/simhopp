@@ -53,7 +53,7 @@ namespace UnitTestSimhopp
 
 
             Assert.AreEqual(6, game.countJudges());
-
+            game.printJudgeList();
         }
 
         [TestMethod]
@@ -75,7 +75,7 @@ namespace UnitTestSimhopp
         public void testCompetitor()
         {
             //competitor 1
-            var competitor = new Competitor("Joel", 12, 1);
+            var competitor = new Competitor("Joel", 12);
             string s1 = (competitor.testCount().ToString());
             Console.WriteLine($"Test1: {s1}");
 
@@ -131,12 +131,12 @@ namespace UnitTestSimhopp
             var game = new Competition("Wt-game", 1);
 
             //Test list for competitor if empty or not
-            var competitor1 = new Competitor("Joel", 12, 1);
-            var competitor2 = new Competitor("frans", 12, 2);
-            var competitor3 = new Competitor("anden", 12, 3);
-            var competitor4 = new Competitor("carl", 12, 4);
-            var competitor5 = new Competitor("bertil", 12, 5);
-            var competitor6 = new Competitor("kjell", 14, 6);
+            var competitor1 = new Competitor("Joel", 12);
+            var competitor2 = new Competitor("frans", 12);
+            var competitor3 = new Competitor("anden", 12);
+            var competitor4 = new Competitor("carl", 12);
+            var competitor5 = new Competitor("bertil", 12);
+            var competitor6 = new Competitor("kjell", 14);
 
             game.addCompetitorToList(competitor1);
             game.addCompetitorToList(competitor2);
@@ -144,9 +144,9 @@ namespace UnitTestSimhopp
             game.addCompetitorToList(competitor4);
             game.addCompetitorToList(competitor5);
             game.addCompetitorToList(competitor6);
-            game.printList();
-            game.removeCompetitorFromList(1);
-            game.printList();
+            game.printCompetitorList();
+            game.removeCompetitorFromList(8);
+            game.printCompetitorList();
             Assert.AreEqual(5, game.countJumps());
         }
 
