@@ -31,6 +31,8 @@ namespace UnitTestSimhopp
             game.addCompetitorToList(competitor5);
             game.addCompetitorToList(competitor6);
 
+
+
             Assert.AreEqual(6, game.countJumps());
 
             //Test list for judges if empty or not
@@ -48,12 +50,13 @@ namespace UnitTestSimhopp
             game.addJudgeToList(judge5);
             game.addJudgeToList(judge6);
 
+
             Assert.AreEqual(6, game.countJudges());
 
         }
 
         [TestMethod]
-        public void testJudge() 
+        public void testJudge()
         {
             //competitor 1
             var judge = new Competitor("Joel", 12, 1);
@@ -88,7 +91,7 @@ namespace UnitTestSimhopp
             Console.WriteLine(jumpType.ShowContentsjumpCombination());
 
             Console.WriteLine("-----     qtyFlips[2]       -----");
-            SortedDictionary<int,double> e = jumpType.addqtyFlips();
+            SortedDictionary<int, double> e = jumpType.addqtyFlips();
             Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
 
             Console.WriteLine("-----     qtyScrews[3]       -----");
@@ -111,13 +114,35 @@ namespace UnitTestSimhopp
             var points = new Points();
 
             Assert.AreEqual(180, points.pointResult(1.6, 2, 6, 10, 34));
-            
-
-
 
 
         }
 
-    }
+        [TestMethod]
 
+        public void testRemoveCompetitorFromList()
+        {
+            var game = new Competition("Wt-game", 1);
+
+            //Test list for competitor if empty or not
+            var competitor1 = new Competitor("Joel", 12, 1);
+            var competitor2 = new Competitor("frans", 12, 2);
+            var competitor3 = new Competitor("anden", 12, 3);
+            var competitor4 = new Competitor("carl", 12, 4);
+            var competitor5 = new Competitor("bertil", 12, 5);
+            var competitor6 = new Competitor("kjell", 14, 6);
+
+            game.addCompetitorToList(competitor1);
+            game.addCompetitorToList(competitor2);
+            game.addCompetitorToList(competitor3);
+            game.addCompetitorToList(competitor4);
+            game.addCompetitorToList(competitor5);
+            game.addCompetitorToList(competitor6);
+            game.printList();
+            game.removeCompetitorFromList(1);
+            game.printList();
+            Assert.AreEqual(5, game.countJumps());
+        }
+
+        }
 }

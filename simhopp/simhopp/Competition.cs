@@ -29,6 +29,31 @@ namespace simhopp
             this.id = id;
             this.name = name;
 
+        } 
+        public void removeCompetitorFromList(int unId)
+        {
+
+            for (int i = competitorList.Count - 1; i >= 0; i--)
+            {
+                if (competitorList[i].id == unId)
+                {
+                    competitorList.RemoveAt(i);
+                }
+            }
+        }
+        public void printCompetitorList()
+        {
+            foreach (var obj in competitorList)
+            {
+                Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
+            }
+        }
+        public void printJudgeList()
+        {
+            foreach (var obj in judgeList)
+            {
+                Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
+            }
         }
 
         public void addCompetitorToList(Competitor obj)// add a comptetitor to a list of competitor
@@ -58,5 +83,6 @@ namespace simhopp
 
             return count;
         }
+
     }
 }
