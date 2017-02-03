@@ -14,8 +14,8 @@ namespace UnitTestSimhopp
 
         public void testCompetition()
         {
-            var game = new Competition("Wt-game", 1);
-
+            var game = new Competition("Wt-game");
+      
             //Test list for competitor if empty or not
             var competitor1 = new Competitor("Joel", 12);
             var competitor2 = new Competitor("frans", 12);
@@ -112,11 +112,6 @@ namespace UnitTestSimhopp
             SortedDictionary<int, double> f = jumpType.addjumpHeight();
             Console.WriteLine(jumpType.ShowContentsaddjumpHeight());
 
-            Console.WriteLine("-----     CreateCompleteJump       -----");
-
-            jumpType.createCompleteJump();
-
-
         }
 
         [TestMethod]
@@ -133,7 +128,7 @@ namespace UnitTestSimhopp
 
         public void testRemoveCompetitorFromList()
         {
-            var game = new Competition("Wt-game", 1);
+            var game = new Competition("Wt-game");
 
             //Test list for competitor if empty or not
             var competitor1 = new Competitor("Joel", 12);
@@ -156,28 +151,106 @@ namespace UnitTestSimhopp
         }
 
         [TestMethod]
-        public void testRemoveJudgeFromList()
+        public void testSeveralCompetitions()
         {
-            var game = new Competition("Wt-game", 1);
+            var game1 = new Competition("Wt-game");
+            var game2 = new Competition("Wth-game");
 
-            //Test list for competitor if empty or not
-            var Judge1 = new Judge("Joel", 12);
-            var Judge2 = new Judge("frans", 12);
-            var Judge3 = new Judge("anden", 12);
-            var Judge4 = new Judge("carl", 12);
-            var Judge5 = new Judge("bertil", 12);
-            var Judge6 = new Judge("kjell", 14);
+            var competitor1 = new Competitor("Joel", 12);
+            var competitor2 = new Competitor("frans", 12);
+            var competitor3 = new Competitor("anden", 12);
+            var competitor4 = new Competitor("carl", 12);
+            var competitor5 = new Competitor("bertil", 12);
+            var competitor6 = new Competitor("kjell", 14);
 
-            game.addJudgeToList(Judge1);
-            game.addJudgeToList(Judge2);
-            game.addJudgeToList(Judge3);
-            game.addJudgeToList(Judge4);
-            game.addJudgeToList(Judge5);
-            game.addJudgeToList(Judge6);
-            game.printJudgeList();
-            game.removeJudgeFromList(13);
-            game.printJudgeList();
-            Assert.AreEqual(5, game.countJudges());
+            var competitor7 = new Competitor("Joel", 12);
+            var competitor8 = new Competitor("frans", 12);
+            var competitor9 = new Competitor("anden", 12);
+            var competitor10 = new Competitor("carl", 12);
+            var competitor11 = new Competitor("bertil", 12);
+            var competitor12 = new Competitor("kjell", 14);
+
+            var judge1 = new Judge("Joel", 12);
+            var judge2 = new Judge("frans", 12);
+            var judge3 = new Judge("anden", 12);
+            var judge4 = new Judge("carl", 12);
+            var judge5 = new Judge("bertil", 12);
+            var judge6 = new Judge("kjell", 14);
+
+            var judge7 = new Judge("Joel", 12);
+            var judge8 = new Judge("frans", 12);
+            var judge9 = new Judge("anden", 12);
+            var judge10 = new Judge("carl", 12);
+            var judge11 = new Judge("bertil", 12);
+            var judge12 = new Judge("kjell", 14);
+
+            game1.addJudgeToList(judge1);
+            game1.addJudgeToList(judge2);
+            game1.addJudgeToList(judge3);
+            game1.addJudgeToList(judge4);
+            game1.addJudgeToList(judge5);
+            game1.addJudgeToList(judge6);
+
+            game2.addJudgeToList(judge7);
+            game2.addJudgeToList(judge8);
+            game2.addJudgeToList(judge9);
+            game2.addJudgeToList(judge10);
+            game2.addJudgeToList(judge11);
+            game2.addJudgeToList(judge12);
+
+
+
+            game1.addCompetitorToList(competitor1);
+            game1.addCompetitorToList(competitor2);
+            game1.addCompetitorToList(competitor3);
+            game1.addCompetitorToList(competitor4);
+            game1.addCompetitorToList(competitor5);
+            game1.addCompetitorToList(competitor6);
+
+            game2.addCompetitorToList(competitor7);
+            game2.addCompetitorToList(competitor8);
+            game2.addCompetitorToList(competitor9);
+            game2.addCompetitorToList(competitor10);
+            game2.addCompetitorToList(competitor11);
+            game2.addCompetitorToList(competitor12);
+            Console.WriteLine("Game 1:");
+            game1.printCompetitorList();
+            game1.printJudgeList();
+            Console.WriteLine("Game 2:");
+            game2.printJudgeList();
+            game2.printCompetitorList();
+            Assert.AreEqual(true, true);
+        }
+
+
+
+        [TestMethod]
+
+        public void testOldcompetition()
+        {
+
+            var oldcompetition = new StoreCompetition();
+
+            var game1 = new Competition("Wt-game1");
+            var game2= new Competition("Wt-game2");
+            var game3 = new Competition("Wt-game3");
+            var game4 = new Competition("Wt-game4");
+            var game5 = new Competition("Wt-game5");
+            var game6 = new Competition("Wt-game6");
+
+            oldcompetition.addCompetition(game1);
+            oldcompetition.addCompetition(game2);
+            oldcompetition.addCompetition(game3);
+            oldcompetition.addCompetition(game4);
+            oldcompetition.addCompetition(game5);
+            oldcompetition.addCompetition(game6);
+
+
+
+
+
+
+            Assert.AreEqual(6, oldcompetition.countOldCompetitions());
         }
 
     }

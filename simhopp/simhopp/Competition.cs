@@ -13,7 +13,8 @@ namespace simhopp
     public class Competition
     {
         //Declaring variables
-        private int id;
+        static int competitionId=1;
+        public int id;
         public string name;
         private List<Competitor> competitorList = new List<Competitor>();
         private List<Judge> judgeList = new List<Judge>();
@@ -24,12 +25,18 @@ namespace simhopp
 
         //Functions
 
-        public Competition(string name, int id) //Creating competition
+        public Competition(string name) //Creating competition
         {
-            this.id = id;
+            id = getCompetitionNextID();
             this.name = name;
 
-        } 
+        }
+
+        public int getCompetitionNextID() // pointing to the next id, useful when adding more competitor-information.
+        {
+            return competitionId++;
+        }
+
         public void removeCompetitorFromList(int unId)
         {
 
@@ -60,7 +67,7 @@ namespace simhopp
 
             foreach (var obj in competitorList)
             {
-                Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
+                Console.WriteLine($"Name: { obj.name.ToString()} , Age: { obj.age.ToString()}, Id: { obj.id.ToString()}");
             }
         }
 
@@ -70,7 +77,7 @@ namespace simhopp
 
             foreach (var obj in judgeList)
             {
-                Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
+                Console.WriteLine($"Name: { obj.name.ToString()} , Age: { obj.age.ToString()}, Id: { obj.id.ToString()}");
             }
         }
 
