@@ -9,12 +9,12 @@ namespace simhopp
 {
     public class JumpType
     {
-        SortedDictionary<string, string> jumpStats = new SortedDictionary<string, string>(); // jumpstats[0] == (volt, 10m)
-        SortedDictionary<int,string> startPos = new SortedDictionary<int, string>(); // startPos[0] == (1, forward)
-        SortedDictionary<int, List<string>> jumpCombination = new SortedDictionary<int, List<string>>(); // jumpCombination[0] == (1, flygande)
-        SortedDictionary<int, double> qtyFlips = new SortedDictionary<int, double>();
-        SortedDictionary<int, double> jumpHeight = new SortedDictionary<int, double>();
-        SortedDictionary<int, List<double>> qtyScrews = new SortedDictionary<int, List<double>>(); // qtyScrews[5/6] == (4/5, 0.5 increments)
+        public SortedDictionary<string, string> jumpStats = new SortedDictionary<string, string>(); // jumpstats[0] == (volt)
+        public SortedDictionary<int,string> startPos = new SortedDictionary<int, string>(); // startPos[0] == (1, forward)
+        public SortedDictionary<int, List<string>> jumpCombination = new SortedDictionary<int, List<string>>(); // jumpCombination[0] == (1, flygande)
+        public SortedDictionary<int, double> qtyFlips = new SortedDictionary<int, double>();
+        public SortedDictionary<int, double> jumpHeight = new SortedDictionary<int, double>();
+        public SortedDictionary<int, List<double>> qtyScrews = new SortedDictionary<int, List<double>>(); // qtyScrews[5/6] == (4/5, 0.5 increments)
         public int testCount()  // Counts how many objects a list has.
         {
             int c = 0;
@@ -249,9 +249,20 @@ namespace simhopp
 
             return qtyScrews;
         }
-    }
-    
 
-    
+
+        public void createCompleteJump()
+        {
+            int kID = 5;
+            double vID = 3;
+            var myKey = qtyScrews.FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID));
+            Console.Write(myKey);
+        }
+
+    }
+
+
+       
+
 }
 

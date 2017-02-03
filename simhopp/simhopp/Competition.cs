@@ -15,7 +15,7 @@ namespace simhopp
         //Declaring variables
         static int competitionId=1;
         private int id;
-        private string name;
+        public string name;
         private List<Competitor> competitorList = new List<Competitor>();
         private List<Judge> judgeList = new List<Judge>();
        
@@ -48,15 +48,33 @@ namespace simhopp
                 }
             }
         }
+
+        public void removeJudgeFromList(int unId)
+        {
+
+            for (int i = judgeList.Count - 1; i >= 0; i--)
+            {
+                if (judgeList[i].id == unId)
+                {
+                    judgeList.RemoveAt(i);
+                }
+            }
+        }
+
         public void printCompetitorList()
         {
+            Console.WriteLine("Competitorlist");
+
             foreach (var obj in competitorList)
             {
                 Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
             }
         }
+
         public void printJudgeList()
         {
+            Console.WriteLine("Judgelist");
+
             foreach (var obj in judgeList)
             {
                 Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
