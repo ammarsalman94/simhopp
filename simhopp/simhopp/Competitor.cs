@@ -8,12 +8,13 @@ using System.Windows;
 namespace simhopp
 {
     public class Competitor
-    { 
+    {
         //Declaring Variables
-        private string name { get; set; } = "";
-        private int    age { get; set; } = 0;
-        private int    id { get; set; } = 0;
-        private int    qtyOfJumps { get; set; } = 0;
+        static int competitorId = 1;
+        public string name { get; set; } = "";
+        public int    age { get; set; } = 0;
+        public int    id { get; set; } = 0;
+        public int    qtyOfJumps { get; set; } = 0;
 
         // private float  score;
         private List<JumpType> competitorJumps = new List<JumpType>();
