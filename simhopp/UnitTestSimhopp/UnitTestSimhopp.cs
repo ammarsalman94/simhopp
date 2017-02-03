@@ -17,12 +17,12 @@ namespace UnitTestSimhopp
             var game = new Competition("Wt-game", 1);
 
             //Test list for competitor if empty or not
-            var competitor1 = new Competitor("Joel", 12, 1);
-            var competitor2 = new Competitor("frans", 12, 2);
-            var competitor3 = new Competitor("anden", 12, 3);
-            var competitor4 = new Competitor("carl", 12, 4);
-            var competitor5 = new Competitor("bertil", 12, 5);
-            var competitor6 = new Competitor("kjell", 14, 6);
+            var competitor1 = new Competitor("Joel", 12);
+            var competitor2 = new Competitor("frans", 12);
+            var competitor3 = new Competitor("anden", 12);
+            var competitor4 = new Competitor("carl", 12);
+            var competitor5 = new Competitor("bertil", 12);
+            var competitor6 = new Competitor("kjell", 14);
 
             game.addCompetitorToList(competitor1);
             game.addCompetitorToList(competitor2);
@@ -32,14 +32,15 @@ namespace UnitTestSimhopp
             game.addCompetitorToList(competitor6);
 
             Assert.AreEqual(6, game.countJumps());
+            
 
             //Test list for judges if empty or not
-            var judge1 = new Judge("Joel", 12, 1);
-            var judge2 = new Judge("frans", 12, 2);
-            var judge3 = new Judge("anden", 12, 3);
-            var judge4 = new Judge("carl", 12, 4);
-            var judge5 = new Judge("bertil", 12, 5);
-            var judge6 = new Judge("kjell", 14, 6);
+            var judge1 = new Judge("Joel", 12);
+            var judge2 = new Judge("frans", 12);
+            var judge3 = new Judge("anden", 12);
+            var judge4 = new Judge("carl", 12);
+            var judge5 = new Judge("bertil", 12);
+            var judge6 = new Judge("kjell", 14);
 
             game.addJudgeToList(judge1);
             game.addJudgeToList(judge2);
@@ -55,11 +56,16 @@ namespace UnitTestSimhopp
         [TestMethod]
         public void testJudge() 
         {
-            //competitor 1
-            var judge = new Competitor("Joel", 12, 1);
-            string s1 = (judge.testCount().ToString());
+            var Judge = new Judge();
+            var judge1 = new Judge("Joel", 12);
+            var judge2 = new Judge("frans", 12);
+            var judge3 = new Judge("anden", 12);
+            var judge4 = new Judge("carl", 12);
+            var judge5 = new Judge("bertil", 12);
+            var judge6 = new Judge("kjell", 14);
+            
 
-            Assert.AreEqual(true, false);
+      
         }
 
         [TestMethod]
