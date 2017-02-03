@@ -34,5 +34,18 @@ namespace simhopp
         {
 
         }
+
+
+        public void removeCompetittionFromList(int unId)
+        {
+
+            for (int i = competitionList.Count - 1; i >= 0; i--)
+            {
+                if (competitionList[i].id == unId)
+                {
+                    competitionList.RemoveAt(i);
+                }
+            }
+        }
     }
 }
