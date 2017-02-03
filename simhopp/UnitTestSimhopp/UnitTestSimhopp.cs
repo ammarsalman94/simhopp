@@ -150,5 +150,30 @@ namespace UnitTestSimhopp
             Assert.AreEqual(5, game.countJumps());
         }
 
+        [TestMethod]
+        public void testRemoveJudgeFromList()
+        {
+            var game = new Competition("Wt-game", 1);
+
+            //Test list for competitor if empty or not
+            var Judge1 = new Judge("Joel", 12);
+            var Judge2 = new Judge("frans", 12);
+            var Judge3 = new Judge("anden", 12);
+            var Judge4 = new Judge("carl", 12);
+            var Judge5 = new Judge("bertil", 12);
+            var Judge6 = new Judge("kjell", 14);
+
+            game.addJudgeToList(Judge1);
+            game.addJudgeToList(Judge2);
+            game.addJudgeToList(Judge3);
+            game.addJudgeToList(Judge4);
+            game.addJudgeToList(Judge5);
+            game.addJudgeToList(Judge6);
+            game.printJudgeList();
+            game.removeJudgeFromList(13);
+            game.printJudgeList();
+            Assert.AreEqual(5, game.countJudges());
         }
+
+    }
 }
