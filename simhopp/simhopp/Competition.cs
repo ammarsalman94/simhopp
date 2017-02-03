@@ -14,7 +14,7 @@ namespace simhopp
     {
         //Declaring variables
         static int competitionId=1;
-        private int id;
+        public int id;
         public string name;
         private List<Competitor> competitorList = new List<Competitor>();
         private List<Judge> judgeList = new List<Judge>();
