@@ -21,7 +21,7 @@ namespace simhopp
 
             foreach (var obj in competitionList)
             {
-                Console.WriteLine($"test: { obj.name.ToString()} , { obj.id.ToString()}");
+               Console.WriteLine($"test: { obj.name.ToString()} , { obj.id.ToString()}");
             }
         }
 

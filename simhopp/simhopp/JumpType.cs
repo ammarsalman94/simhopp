@@ -253,10 +253,14 @@ namespace simhopp
 
         public void createCompleteJump()
         {
-            int kID = 5;
-            double vID = 3;
-            var myKey = qtyScrews.FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID));
-            Console.Write(myKey);
+            int kID = 5; // Key ID
+            double vID = 3; // Value ID
+            var myKey = qtyScrews[kID].FirstOrDefault(y => y == vID);
+   
+            var myKey2 = qtyScrews[kID];
+          //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
+
+            Console.Write("Screws: " +myKey + "jumpHeight: " + myKey2);
         }
 
     }
