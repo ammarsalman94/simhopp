@@ -207,19 +207,18 @@ namespace UnitTestSimhopp
             game1.addCompetitorToList(competitor5);
             game1.addCompetitorToList(competitor6);
 
-            game1.addCompetitorToList(competitor7);
-            game1.addCompetitorToList(competitor8);
-            game1.addCompetitorToList(competitor9);
-            game1.addCompetitorToList(competitor10);
-            game1.addCompetitorToList(competitor11);
-            game1.addCompetitorToList(competitor12);
-
+            game2.addCompetitorToList(competitor7);
+            game2.addCompetitorToList(competitor8);
+            game2.addCompetitorToList(competitor9);
+            game2.addCompetitorToList(competitor10);
+            game2.addCompetitorToList(competitor11);
+            game2.addCompetitorToList(competitor12);
+            Console.WriteLine("Game 1:");
             game1.printCompetitorList();
-            game2.printCompetitorList();
-
             game1.printJudgeList();
+            Console.WriteLine("Game 2:");
             game2.printJudgeList();
-
+            game2.printCompetitorList();
             Assert.AreEqual(true, true);
         }
 

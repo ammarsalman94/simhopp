@@ -67,7 +67,7 @@ namespace simhopp
 
             foreach (var obj in competitorList)
             {
-                Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
+                Console.WriteLine($"Name: { obj.name.ToString()} , Age: { obj.age.ToString()}, Id: { obj.id.ToString()}");
             }
         }
 
@@ -77,7 +77,7 @@ namespace simhopp
 
             foreach (var obj in judgeList)
             {
-                Console.WriteLine($"test: { obj.name.ToString()} , { obj.age.ToString()}, { obj.id.ToString()}");
+                Console.WriteLine($"Name: { obj.name.ToString()} , Age: { obj.age.ToString()}, Id: { obj.id.ToString()}");
             }
         }
 
