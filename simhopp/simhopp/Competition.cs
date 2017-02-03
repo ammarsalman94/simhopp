@@ -29,7 +29,8 @@ namespace simhopp
             this.id = id;
             this.name = name;
 
-        } 
+        }
+         
         public void removeCompetitorFromList(int unId)
         {
 
