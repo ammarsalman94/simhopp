@@ -13,6 +13,7 @@ namespace simhopp
     public class Competition
     {
         //Declaring variables
+        static int competitionId=1;
         private int id;
         private string name;
         private List<Competitor> competitorList = new List<Competitor>();
@@ -24,12 +25,18 @@ namespace simhopp
 
         //Functions
 
-        public Competition(string name, int id) //Creating competition
+        public Competition(string name) //Creating competition
         {
-            this.id = id;
+            id = getCompetitionNextID();
             this.name = name;
 
-        } 
+        }
+
+        public int getCompetitionNextID() // pointing to the next id, useful when adding more competitor-information.
+        {
+            return competitionId++;
+        }
+
         public void removeCompetitorFromList(int unId)
         {
 
