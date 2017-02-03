@@ -224,8 +224,8 @@ namespace UnitTestSimhopp
 
 
 
-        [TestMethod]
 
+        [TestMethod]
         public void testOldcompetition()
         {
 
@@ -246,11 +246,11 @@ namespace UnitTestSimhopp
             oldcompetition.addCompetition(game6);
 
 
+            oldcompetition.removeCompetittionFromList(5);
 
 
 
-
-            Assert.AreEqual(6, oldcompetition.countOldCompetitions());
+            Assert.AreEqual(5, oldcompetition.countOldCompetitions());
         }
 
     }
