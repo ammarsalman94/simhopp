@@ -257,7 +257,7 @@ namespace simhopp
             double vID = 3; // Value ID
             var myKey = qtyScrews[kID].FirstOrDefault(y => y == vID);
    
-            var myKey2 = qtyScrews[kID];
+            var myKey2 = qtyScrews[kID].FirstOrDefault(y => y == vID);
           //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
 
             Console.Write("Screws: " +myKey + "jumpHeight: " + myKey2);
