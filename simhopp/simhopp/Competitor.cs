@@ -8,21 +8,22 @@ using System.Windows;
 namespace simhopp
 {
     public class Competitor
-    { 
+    {
         //Declaring Variables
-        private string name { get; set; } = "";
-        private int    age { get; set; } = 0;
-        private int    id { get; set; } = 0;
-        private int    qtyOfJumps { get; set; } = 0;
+        static int competitorId = 1;
+        public string name { get; set; } = "";
+        public int    age { get; set; } = 0;
+        public int    id { get; set; } = 0;
+        public int    qtyOfJumps { get; set; } = 0;
 
         // private float  score;
         private List<JumpType> competitorJumps = new List<JumpType>();
 
-        public Competitor(string name, int age, int id) //Constructor
+        public Competitor(string name, int age) //Constructor
         {
             this.name = name;
             this.age = age;
-            this.id = id;
+            id = getcompetitorNextID();
 
             //List<Competitor> jumplist = new List<Competitor>();
         }
@@ -39,9 +40,9 @@ namespace simhopp
         {
 
         }
-        protected int getNextID() // pointing to the next id, useful when adding more competitor-information.
+        protected int getcompetitorNextID() // pointing to the next id, useful when adding more competitor-information.
         {
-            return ++id;
+            return competitorId++;
         }
         
         public void addCompetitor() // Creating new competitor

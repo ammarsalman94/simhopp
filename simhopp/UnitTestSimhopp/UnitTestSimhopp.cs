@@ -17,12 +17,12 @@ namespace UnitTestSimhopp
             var game = new Competition("Wt-game", 1);
 
             //Test list for competitor if empty or not
-            var competitor1 = new Competitor("Joel", 12, 1);
-            var competitor2 = new Competitor("frans", 12, 2);
-            var competitor3 = new Competitor("anden", 12, 3);
-            var competitor4 = new Competitor("carl", 12, 4);
-            var competitor5 = new Competitor("bertil", 12, 5);
-            var competitor6 = new Competitor("kjell", 14, 6);
+            var competitor1 = new Competitor("Joel", 12);
+            var competitor2 = new Competitor("frans", 12);
+            var competitor3 = new Competitor("anden", 12);
+            var competitor4 = new Competitor("carl", 12);
+            var competitor5 = new Competitor("bertil", 12);
+            var competitor6 = new Competitor("kjell", 14);
 
             game.addCompetitorToList(competitor1);
             game.addCompetitorToList(competitor2);
@@ -31,15 +31,18 @@ namespace UnitTestSimhopp
             game.addCompetitorToList(competitor5);
             game.addCompetitorToList(competitor6);
 
+
+
             Assert.AreEqual(6, game.countJumps());
+            
 
             //Test list for judges if empty or not
-            var judge1 = new Judge("Joel", 12, 1);
-            var judge2 = new Judge("frans", 12, 2);
-            var judge3 = new Judge("anden", 12, 3);
-            var judge4 = new Judge("carl", 12, 4);
-            var judge5 = new Judge("bertil", 12, 5);
-            var judge6 = new Judge("kjell", 14, 6);
+            var judge1 = new Judge("Joel", 12);
+            var judge2 = new Judge("frans", 12);
+            var judge3 = new Judge("anden", 12);
+            var judge4 = new Judge("carl", 12);
+            var judge5 = new Judge("bertil", 12);
+            var judge6 = new Judge("kjell", 14);
 
             game.addJudgeToList(judge1);
             game.addJudgeToList(judge2);
@@ -48,25 +51,31 @@ namespace UnitTestSimhopp
             game.addJudgeToList(judge5);
             game.addJudgeToList(judge6);
 
-            Assert.AreEqual(6, game.countJudges());
 
+            Assert.AreEqual(6, game.countJudges());
+            game.printJudgeList();
         }
 
         [TestMethod]
-        public void testJudge() 
+        public void testJudge()
         {
-            //competitor 1
-            var judge = new Competitor("Joel", 12, 1);
-            string s1 = (judge.testCount().ToString());
+            var Judge = new Judge();
+            var judge1 = new Judge("Joel", 12);
+            var judge2 = new Judge("frans", 12);
+            var judge3 = new Judge("anden", 12);
+            var judge4 = new Judge("carl", 12);
+            var judge5 = new Judge("bertil", 12);
+            var judge6 = new Judge("kjell", 14);
+            
 
-            Assert.AreEqual(true, false);
+      
         }
 
         [TestMethod]
         public void testCompetitor()
         {
             //competitor 1
-            var competitor = new Competitor("Joel", 12, 1);
+            var competitor = new Competitor("Joel", 12);
             string s1 = (competitor.testCount().ToString());
             Console.WriteLine($"Test1: {s1}");
 
@@ -88,7 +97,7 @@ namespace UnitTestSimhopp
             Console.WriteLine(jumpType.ShowContentsjumpCombination());
 
             Console.WriteLine("-----     qtyFlips[2]       -----");
-            SortedDictionary<int,double> e = jumpType.addqtyFlips();
+            SortedDictionary<int, double> e = jumpType.addqtyFlips();
             Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
 
             Console.WriteLine("-----     qtyScrews[3]       -----");
@@ -116,13 +125,60 @@ namespace UnitTestSimhopp
             var points = new Points();
 
             Assert.AreEqual(180, points.pointResult(1.6, 2, 6, 10, 34));
-            
-
-
 
 
         }
 
-    }
+        [TestMethod]
 
+        public void testRemoveCompetitorFromList()
+        {
+            var game = new Competition("Wt-game", 1);
+
+            //Test list for competitor if empty or not
+            var competitor1 = new Competitor("Joel", 12);
+            var competitor2 = new Competitor("frans", 12);
+            var competitor3 = new Competitor("anden", 12);
+            var competitor4 = new Competitor("carl", 12);
+            var competitor5 = new Competitor("bertil", 12);
+            var competitor6 = new Competitor("kjell", 14);
+
+            game.addCompetitorToList(competitor1);
+            game.addCompetitorToList(competitor2);
+            game.addCompetitorToList(competitor3);
+            game.addCompetitorToList(competitor4);
+            game.addCompetitorToList(competitor5);
+            game.addCompetitorToList(competitor6);
+            game.printCompetitorList();
+            game.removeCompetitorFromList(8);
+            game.printCompetitorList();
+            Assert.AreEqual(5, game.countJumps());
+        }
+
+        [TestMethod]
+        public void testRemoveJudgeFromList()
+        {
+            var game = new Competition("Wt-game", 1);
+
+            //Test list for competitor if empty or not
+            var Judge1 = new Judge("Joel", 12);
+            var Judge2 = new Judge("frans", 12);
+            var Judge3 = new Judge("anden", 12);
+            var Judge4 = new Judge("carl", 12);
+            var Judge5 = new Judge("bertil", 12);
+            var Judge6 = new Judge("kjell", 14);
+
+            game.addJudgeToList(Judge1);
+            game.addJudgeToList(Judge2);
+            game.addJudgeToList(Judge3);
+            game.addJudgeToList(Judge4);
+            game.addJudgeToList(Judge5);
+            game.addJudgeToList(Judge6);
+            game.printJudgeList();
+            game.removeJudgeFromList(13);
+            game.printJudgeList();
+            Assert.AreEqual(5, game.countJudges());
+        }
+
+    }
 }
