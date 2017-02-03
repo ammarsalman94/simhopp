@@ -103,6 +103,11 @@ namespace UnitTestSimhopp
             SortedDictionary<int, double> f = jumpType.addjumpHeight();
             Console.WriteLine(jumpType.ShowContentsaddjumpHeight());
 
+            Console.WriteLine("-----     CreateCompleteJump       -----");
+
+            jumpType.createCompleteJump();
+
+
         }
 
         [TestMethod]

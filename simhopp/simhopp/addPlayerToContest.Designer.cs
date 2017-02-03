@@ -37,11 +37,17 @@ namespace simhopp
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.jumpTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.jumpTypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.jumpTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.jumpTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jumpTypeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -92,17 +98,12 @@ namespace simhopp
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.jumpTypeBindingSource;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(31, 240);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // jumpTypeBindingSource
-            // 
-            this.jumpTypeBindingSource.DataSource = typeof(simhopp.JumpType);
             // 
             // comboBox2
             // 
@@ -141,6 +142,22 @@ namespace simhopp
             this.comboBox4.Size = new System.Drawing.Size(121, 28);
             this.comboBox4.TabIndex = 8;
             // 
+            // jumpTypeBindingSource2
+            // 
+            this.jumpTypeBindingSource2.DataSource = typeof(simhopp.JumpType);
+            // 
+            // jumpTypeBindingSource1
+            // 
+            this.jumpTypeBindingSource1.DataSource = typeof(simhopp.JumpType);
+            // 
+            // jumpTypeBindingSource
+            // 
+            this.jumpTypeBindingSource.DataSource = typeof(simhopp.JumpType);
+            // 
+            // jumpTypeBindingSource3
+            // 
+            this.jumpTypeBindingSource3.DataSource = typeof(simhopp.JumpType);
+            // 
             // addPlayerToContest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -158,7 +175,10 @@ namespace simhopp
             this.Name = "addPlayerToContest";
             this.Text = "addPlayerToContest";
             this.Load += new System.EventHandler(this.addPlayerToContest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,10 +191,13 @@ namespace simhopp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private BindingSource jumpTypeBindingSource;
+        private BindingSource jumpTypeBindingSource1;
+        public ComboBox comboBox1;
+        private BindingSource jumpTypeBindingSource2;
+        private BindingSource jumpTypeBindingSource3;
     }
 }
