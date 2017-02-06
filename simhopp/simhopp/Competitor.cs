@@ -75,7 +75,7 @@ namespace simhopp
         {
             
             var obj1 = new JumpType();
-            var holdJump = $"{obj1.createCompleteJump()}";
+           // var holdJump = $"{obj1.createCompleteJump()}";
           
             double holdPoints = 0;
             var obj2 = new Points();

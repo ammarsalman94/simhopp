@@ -247,23 +247,22 @@ namespace simhopp
         }
 
 
-        public string createCompleteJump(params int[] kID)
+        public string createCompleteJump(double vID,string v2ID,params int[] kID) //inmatni3ng blir (2.5,"tyska",5........); 
         {
            // List<int> kID = new List<int>(); // Key ID
-            double vID = 3; // Value ID
-            string v2ID = "A";
+            
             var myKey = startPos[kID[0]];
             var myKey2 = jumpCombination[kID[1]].FirstOrDefault(y => y == v2ID);
             var myKey3 = qtyFlips[kID[2]];
             var myKey4 = qtyScrews[kID[3]].FirstOrDefault(y => y == vID);
             var myKey5 = jumpStats[kID[4]];
-            var myKey6 =jumpHeight[kID[5]];
+            var myKey6 = jumpHeight[kID[5]];
             
            
 
             //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
             
-            var str = $"{myKey}{myKey2}{myKey3}{myKey4}{myKey5}{myKey6}";
+            var str = $"{myKey} {myKey2} {myKey3} {myKey4} {myKey5} {myKey6}";
             Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2+ " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
            // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
             Console.Write("\nCompleteJump:" + str);
@@ -274,7 +273,7 @@ namespace simhopp
         public string returnJump()
         {
             Console.WriteLine("\n\n\n---ANDRA VALET ---- \n\n");
-            return createCompleteJump(5,3,5,2,3,4);
+            return createCompleteJump(5,"Isander/Mollbergare",5,5,3,4);
         }
 
 
