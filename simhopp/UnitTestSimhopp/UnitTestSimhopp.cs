@@ -105,7 +105,7 @@ namespace UnitTestSimhopp
             Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
 
             Console.WriteLine("-----     jumpstats[4]       -----");
-            SortedDictionary<string, string> g = jumpType.addjumpStats();
+            SortedDictionary<int, string> g = jumpType.addjumpStats();
             Console.WriteLine(jumpType.ShowContentsjumpStats());
 
             Console.WriteLine("-----     jumpHeight[5]       -----");
@@ -114,7 +114,7 @@ namespace UnitTestSimhopp
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
-            jumpType.createCompleteJump(5,2,5,3,2);
+            jumpType.createCompleteJump(5,2,5,3,2,2);
 
         }
 
@@ -143,7 +143,7 @@ namespace UnitTestSimhopp
             Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
 
             Console.WriteLine("-----     jumpstats[4]       -----");
-            SortedDictionary<string, string> g = jumpType.addjumpStats();
+            SortedDictionary<int, string> g = jumpType.addjumpStats();
             Console.WriteLine(jumpType.ShowContentsjumpStats());
 
             Console.WriteLine("-----     jumpHeight[5]       -----");
