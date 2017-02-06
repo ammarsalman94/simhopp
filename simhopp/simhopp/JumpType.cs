@@ -247,10 +247,9 @@ namespace simhopp
         }
 
 
-        public string createCompleteJump()
+        public string createCompleteJump(List<int>kID)
         {
-           // List<int> kID;
-            List<int> kID = new List<int>(); // Key ID
+           // List<int> kID = new List<int>(); // Key ID
             double vID = 3; // Value ID
             string v2ID = "Framåt";
             var myKey = qtyScrews[kID[0]].FirstOrDefault(y => y == vID);
@@ -269,6 +268,30 @@ namespace simhopp
         }
 
 
+
+        public double getDifficulty(string diveNumber)
+        {
+            double difficulty = 0;
+
+            if (diveNumber.Length == 4)
+            {
+
+
+            }
+            else if (diveNumber.Length == 5)
+            {
+
+
+
+            }
+            else
+                return 0;
+
+
+
+
+            return difficulty;
+        }
     }
 
 
