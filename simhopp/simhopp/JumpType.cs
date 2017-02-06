@@ -194,17 +194,12 @@ namespace simhopp
         }
         public SortedDictionary<int, double> addjumpHeight() // Adding information to the qtyFlips dictionary
         {
-            jumpHeight.Add(1, 0);
-            jumpHeight.Add(2, 0.5);
-            jumpHeight.Add(3, 1);
-            jumpHeight.Add(4, 1.5);
-            jumpHeight.Add(5, 2);
-            jumpHeight.Add(6, 2.5);
-            jumpHeight.Add(7, 3);
-            jumpHeight.Add(8, 3.5);
-            jumpHeight.Add(9, 4);
-            jumpHeight.Add(10, 4.5);
-            jumpHeight.Add(11, 5);
+            jumpHeight.Add(1, 1);
+            jumpHeight.Add(2, 3);
+            jumpHeight.Add(3, 5);
+            jumpHeight.Add(4, 7.5);
+            jumpHeight.Add(5, 10);
+
 
             return jumpHeight;
         }
@@ -252,20 +247,24 @@ namespace simhopp
         }
 
 
-        public void createCompleteJump()
+        public string createCompleteJump(List<int>kID)
         {
-            int kID = 5; // Key ID
+           // List<int> kID = new List<int>(); // Key ID
             double vID = 3; // Value ID
             string v2ID = "Framåt";
-            var myKey = qtyScrews[kID].FirstOrDefault(y => y == vID);
-            var myKey2 = qtyFlips[kID];
-            var myKey3 = jumpCombination[kID].FirstOrDefault(y => y == v2ID);
-            var myKey4 =jumpHeight[kID];
-            var myKey5 = startPos[kID];
+            var myKey = qtyScrews[kID[0]].FirstOrDefault(y => y == vID);
+            var myKey2 = qtyFlips[kID[1]];
+            var myKey3 = jumpCombination[kID[2]].FirstOrDefault(y => y == v2ID);
+            var myKey4 =jumpHeight[kID[3]];
+            var myKey5 = startPos[kID[4]];
 
             //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
-
-            Console.Write("Screws: " +myKey + "Flips: " + myKey2+ "jumpCombo: " + myKey3 + "JumpHeight: " + myKey4 + "startPos" + myKey5);
+            
+            var str = $"{myKey}{myKey2}{myKey3}{myKey4}{myKey5}";
+            Console.Write("Screws: " +myKey + " Flips: " + myKey2+ " jumpCombo: " + myKey3 + " JumpHeight: " + myKey4 + " startPos: " + myKey5);
+           // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
+            Console.Write("\nCompleteJump:" + str);
+            return str;
         }
 
     }
