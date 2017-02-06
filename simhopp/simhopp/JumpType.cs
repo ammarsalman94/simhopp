@@ -266,6 +266,31 @@ namespace simhopp
             return str;
         }
 
+
+
+        public double getDifficulty(string diveNumber)
+        {
+            double difficulty = 0;
+
+            if (diveNumber.Length == 4)
+            {
+
+
+            }
+            else if (diveNumber.Length == 5)
+            {
+
+
+
+            }
+            else
+                return 0;
+
+
+
+
+            return difficulty;
+        }
     }
 
 
