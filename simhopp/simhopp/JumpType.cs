@@ -252,17 +252,19 @@ namespace simhopp
            // List<int> kID = new List<int>(); // Key ID
             double vID = 3; // Value ID
             string v2ID = "A";
-            var myKey = qtyScrews[kID[0]].FirstOrDefault(y => y == vID);
-            var myKey2 = qtyFlips[kID[1]];
-            var myKey3 = jumpCombination[kID[2]].FirstOrDefault(y => y == v2ID);
-            var myKey4 =jumpHeight[kID[3]];
+            var myKey = startPos[kID[0]];
+            var myKey2 = jumpCombination[kID[1]].FirstOrDefault(y => y == v2ID);
+            var myKey3 = qtyFlips[kID[2]];
+            var myKey4 = qtyScrews[kID[3]].FirstOrDefault(y => y == vID);
             var myKey5 = jumpStats[kID[4]];
-            var myKey6 = startPos[kID[5]];
+            var myKey6 =jumpHeight[kID[5]];
+            
+           
 
             //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
             
             var str = $"{myKey}{myKey2}{myKey3}{myKey4}{myKey5}{myKey6}";
-            Console.Write("Screws: " +myKey + " Flips: " + myKey2+ " jumpCombo: " + myKey3 + " JumpHeight: " + myKey4 + " jumpStats: " + myKey5 + " StartPos: " + myKey6);
+            Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2+ " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
            // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
             Console.Write("\nCompleteJump:" + str);
             return str;
@@ -273,16 +275,30 @@ namespace simhopp
         public double getDifficulty(string diveNumber)
         {
             double difficulty = 0;
-
-            if (diveNumber.Length == 4)
+            //1-4
+            if (diveNumber.Split(' ')[0] == "Framåt" && diveNumber.Split(' ')[0] == "Bakåt" || diveNumber.Split(' ')[0] == "Isander/Mollbergare" || diveNumber.Split(' ')[0] == "Tyska")
             {
+                //1-2
+                if (diveNumber.Split(' ')[1] == "Flygande")
+                {
 
+                }
+                else if (diveNumber.Split(' ')[1 ] == "EjFlygande")
+                {
+
+                }
+                else
+                    return 0;
 
             }
-            else if (diveNumber.Length == 5)
+            //5
+            else if (diveNumber.Split(' ')[0] == "Skruvhopp")
             {
 
-
+            }
+            //6
+            else if (diveNumber.Split(' ')[0] == "Handstans")
+            {
 
             }
             else
