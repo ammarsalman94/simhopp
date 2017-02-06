@@ -119,6 +119,46 @@ namespace UnitTestSimhopp
         }
 
         [TestMethod]
+        public void testJumpTypeToCompetitor()
+        {
+
+
+            var jumpType = new JumpType();
+            var competitor = new Competitor("Joel", 12);
+
+            Console.WriteLine("-----     StartPos[0]       -----");
+            SortedDictionary<int, string> s = jumpType.addStartPos();
+            Console.WriteLine(jumpType.ShowContentsStartPos());
+
+            Console.WriteLine("-----     jumpCombo[1]       -----");
+            SortedDictionary<int, List<string>> d = jumpType.addjumpCombination();
+            Console.WriteLine(jumpType.ShowContentsjumpCombination());
+
+            Console.WriteLine("-----     qtyFlips[2]       -----");
+            SortedDictionary<int, double> e = jumpType.addqtyFlips();
+            Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
+
+            Console.WriteLine("-----     qtyScrews[3]       -----");
+            SortedDictionary<int, List<double>> h = jumpType.addqtyScrews();
+            Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
+
+            Console.WriteLine("-----     jumpstats[4]       -----");
+            SortedDictionary<string, string> g = jumpType.addjumpStats();
+            Console.WriteLine(jumpType.ShowContentsjumpStats());
+
+            Console.WriteLine("-----     jumpHeight[5]       -----");
+            SortedDictionary<int, double> f = jumpType.addjumpHeight();
+            Console.WriteLine(jumpType.ShowContentsaddjumpHeight());
+
+            Console.WriteLine("-----     Create Complete Jump       -----");
+
+            jumpType.createCompleteJump();
+
+
+
+        }
+
+        [TestMethod]
         public void testPoints()
         {
             var points = new Points();
@@ -230,7 +270,7 @@ namespace UnitTestSimhopp
 
 
         [TestMethod]
-        public void testOldcompetition()
+        public void testOldCompetition()
         {
 
             var oldcompetition = new StoreCompetition();
@@ -255,6 +295,48 @@ namespace UnitTestSimhopp
 
 
             Assert.AreEqual(5, oldcompetition.countOldCompetitions());
+        }
+
+        [TestMethod]
+        public void testFullCompetition()
+        {
+
+            var competition = new StoreCompetition();
+
+            var game = new Competition("Wt-game");
+
+            competition.addCompetition(game);
+
+            var Judge = new Judge();
+            var judge1 = new Judge("Joel", 12);
+            var judge2 = new Judge("frans", 12);
+            var judge3 = new Judge("anden", 12);
+            var judge4 = new Judge("carl", 12);
+            var judge5 = new Judge("bertil", 12);
+            var judge6 = new Judge("kjell", 14);
+            //Test list for competitor if empty or not
+            var competitor1 = new Competitor("Joel", 12);
+            var competitor2 = new Competitor("frans", 12);
+            var competitor3 = new Competitor("anden", 12);
+            var competitor4 = new Competitor("carl", 12);
+            var competitor5 = new Competitor("bertil", 12);
+            var competitor6 = new Competitor("kjell", 14);
+
+            game.addCompetitorToList(competitor1);
+            game.addCompetitorToList(competitor2);
+            game.addCompetitorToList(competitor3);
+            game.addCompetitorToList(competitor4);
+            game.addCompetitorToList(competitor5);
+            game.addCompetitorToList(competitor6);
+
+            game.addJudgeToList(judge1);
+            game.addJudgeToList(judge2);
+            game.addJudgeToList(judge3);
+            game.addJudgeToList(judge4);
+            game.addJudgeToList(judge5);
+            game.addJudgeToList(judge6);
+
+            Assert.AreEqual(5, competition.countOldCompetitions());
         }
 
     }
