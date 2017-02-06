@@ -9,7 +9,7 @@ namespace simhopp
 {
     public class JumpType
     {
-        public SortedDictionary<string, string> jumpStats = new SortedDictionary<string, string>(); // jumpstats[0] == (volt)
+        public SortedDictionary<int, string> jumpStats = new SortedDictionary<int, string>(); // jumpstats[0] == (volt)
         public SortedDictionary<int,string> startPos = new SortedDictionary<int, string>(); // startPos[0] == (1, forward)
         public SortedDictionary<int, List<string>> jumpCombination = new SortedDictionary<int, List<string>>(); // jumpCombination[0] == (1, flygande)
         public SortedDictionary<int, double> qtyFlips = new SortedDictionary<int, double>();
@@ -33,7 +33,7 @@ namespace simhopp
         public string ShowContentsjumpStats()
         {
             var sb = new StringBuilder();
-            foreach (KeyValuePair<string, string> item in jumpStats)
+            foreach (KeyValuePair<int, string> item in jumpStats)
             {
                 sb.Append(string.Format("key {0} is {1} \n", item.Key, item.Value));
             }
@@ -51,7 +51,7 @@ namespace simhopp
             //    }
             //    return  "" + str1 + str2;
         }
-        public SortedDictionary<string,string> addjumpStats() //Adding information about the jumpStyle to the dictionary
+        public SortedDictionary<int,string> addjumpStats() //Adding information about the jumpStyle to the dictionary
         {
             try
             {
@@ -83,10 +83,10 @@ namespace simhopp
                 //jumpStats["Valfri"].Add(7.5);
                 //jumpStats["Valfri"].Add(10);
 
-                jumpStats.Add("A", "Rak");
-                jumpStats.Add("B", "Pik");
-                jumpStats.Add("C", "Gruppering");
-                jumpStats.Add("D", "Valfri");
+                jumpStats.Add(1, "Rak");
+                jumpStats.Add(2, "Pik");
+                jumpStats.Add(3, "Gruppering");
+                jumpStats.Add(4, "Valfri");
 
                 //END OF JumpStats
 
@@ -258,17 +258,20 @@ namespace simhopp
         {
            // List<int> kID = new List<int>(); // Key ID
             double vID = 3; // Value ID
-            string v2ID = "Framåt";
-            var myKey = qtyScrews[kID[0]].FirstOrDefault(y => y == vID);
-            var myKey2 = qtyFlips[kID[1]];
-            var myKey3 = jumpCombination[kID[2]].FirstOrDefault(y => y == v2ID);
-            var myKey4 =jumpHeight[kID[3]];
-            var myKey5 = startPos[kID[4]];
+            string v2ID = "A";
+            var myKey = startPos[kID[0]];
+            var myKey2 = jumpCombination[kID[1]].FirstOrDefault(y => y == v2ID);
+            var myKey3 = qtyFlips[kID[2]];
+            var myKey4 = qtyScrews[kID[3]].FirstOrDefault(y => y == vID);
+            var myKey5 = jumpStats[kID[4]];
+            var myKey6 =jumpHeight[kID[5]];
+            
+           
 
             //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
             
-            var str = $"{myKey}{myKey2}{myKey3}{myKey4}{myKey5}";
-            Console.Write("Screws: " +myKey + " Flips: " + myKey2+ " jumpCombo: " + myKey3 + " JumpHeight: " + myKey4 + " startPos: " + myKey5);
+            var str = $"{myKey}{myKey2}{myKey3}{myKey4}{myKey5}{myKey6}";
+            Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2+ " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
            // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
             Console.Write("\nCompleteJump:" + str);
 
@@ -276,21 +279,41 @@ namespace simhopp
         }
 
 
+        public string returnJump()
+        {
+            Console.WriteLine("\n\n\n---ANDRA VALET ---- \n\n");
+            return createCompleteJump(5,3,5,2,3,4);
+        }
+
 
 
         public double getDifficulty(string diveNumber)
         {
             double difficulty = 0;
-
-            if (diveNumber.Length == 4)
+            //1-4
+            if (diveNumber.Split(' ')[0] == "Framåt" && diveNumber.Split(' ')[0] == "Bakåt" || diveNumber.Split(' ')[0] == "Isander/Mollbergare" || diveNumber.Split(' ')[0] == "Tyska")
             {
+                //1-2
+                if (diveNumber.Split(' ')[1] == "Flygande")
+                {
 
+                }
+                else if (diveNumber.Split(' ')[1 ] == "EjFlygande")
+                {
+
+                }
+                else
+                    return 0;
 
             }
-            else if (diveNumber.Length == 5)
+            //5
+            else if (diveNumber.Split(' ')[0] == "Skruvhopp")
             {
 
-
+            }
+            //6
+            else if (diveNumber.Split(' ')[0] == "Handstans")
+            {
 
             }
             else
