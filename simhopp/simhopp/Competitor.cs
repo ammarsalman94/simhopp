@@ -87,7 +87,7 @@ namespace simhopp
 
            
 
-          competitorJumps.Add(holdPoints, holdJump);
+          //competitorJumps.Add(holdPoints, holdJump);
 
         }
         
