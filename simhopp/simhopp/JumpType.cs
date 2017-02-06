@@ -247,7 +247,7 @@ namespace simhopp
         }
 
 
-        public string createCompleteJump(List<int>kID)
+        public string createCompleteJump(params int[] kID)
         {
            // List<int> kID = new List<int>(); // Key ID
             double vID = 3; // Value ID
