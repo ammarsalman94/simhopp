@@ -23,7 +23,13 @@ namespace simhopp
 
         }
 
+
         //jumpStats
+        public JumpType()
+        {
+
+        }
+
         public string ShowContentsjumpStats()
         {
             var sb = new StringBuilder();
@@ -216,6 +222,7 @@ namespace simhopp
             return sb.ToString();
 
         }
+
         public SortedDictionary<int, List<double>> addqtyScrews() // adding information to the qtyScrews dictionary
         {
             qtyScrews.Add(5, new List<double>());
@@ -264,8 +271,10 @@ namespace simhopp
             Console.Write("Screws: " +myKey + " Flips: " + myKey2+ " jumpCombo: " + myKey3 + " JumpHeight: " + myKey4 + " startPos: " + myKey5);
            // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
             Console.Write("\nCompleteJump:" + str);
+
             return str;
         }
+
 
 
 
