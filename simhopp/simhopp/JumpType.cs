@@ -263,8 +263,11 @@ namespace simhopp
             var myKey5 = startPos[kID];
 
             //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
-
-            Console.Write("Screws: " +myKey + "Flips: " + myKey2+ "jumpCombo: " + myKey3 + "JumpHeight: " + myKey4 + "startPos" + myKey5);
+ 
+            var str = $"{myKey}{myKey2}{myKey3}{myKey4}{myKey5}";
+            Console.Write("Screws: " +myKey + " Flips: " + myKey2+ " jumpCombo: " + myKey3 + " JumpHeight: " + myKey4 + " startPos: " + myKey5);
+           // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
+            Console.Write("\nCompleteJump:" + str);
         }
 
     }
