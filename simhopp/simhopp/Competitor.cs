@@ -12,12 +12,12 @@ namespace simhopp
         //Declaring Variables
         static int competitorId = 1;
         public string name { get; set; } = "";
-        public int    age { get; set; } = 0;
-        public int    id { get; set; } = 0;
-        public int    qtyOfJumps { get; set; } = 0;
+        public int age { get; set; } = 0;
+        public int id { get; set; } = 0;
+        public int qtyOfJumps { get; set; } = 0;
 
         // private float  score;
-        private SortedList<Points, List<JumpType>> competitorJumps = new SortedList<Points, List<JumpType>>();
+        private SortedList<float, List<string>> competitorJumps = new SortedList<float, List<string>>();
 
         public Competitor(string name, int age) //Constructor
         {
@@ -45,39 +45,49 @@ namespace simhopp
         {
             return competitorId++;
         }
-        
+
         public void addCompetitor() // Creating new competitor
         {
-            
-        } 
+
+        }
 
         public int testCount()  // Counts how many objects a list has.
         {
             int c = 0;
             c = competitorJumps.Count();
             return c;
-              
+
         }
 
         public void countScore() //count score to competitor
-        {  
-             
+        {
+
         }
 
-         
+
         public void sendInfoToJudge() //send info about competitor to judge
         {
 
         }
 
-        
+
         public void addJumpTypeToCompetitor()
         {
-            var obj = new JumpType();
-            obj.createCompleteJump();
+
+            string holdJump;
+            var obj1 = new JumpType();
+           holdJump = obj1.createCompleteJump();
+          Console.WriteLine($"holdJump:{holdJump}" );
+
+            float holdPoints = 0;
+            var obj2 = new Points();
+            holdPoints = obj2.addPoints(9);
 
 
 
+           
+
+          competitorJumps.Add(holdPoints, holdJump);
 
         }
         
