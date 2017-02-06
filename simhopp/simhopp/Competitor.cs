@@ -16,15 +16,15 @@ namespace simhopp
         public int id { get; set; } = 0;
         public int qtyOfJumps { get; set; } = 0;
 
-        // private float  score;
-        private SortedList<double, List<string>> competitorJumps = new SortedList<double, List<string>>();
+        // private float jumptype and score;
+        public Dictionary<string, double> competitorJumps = new Dictionary<string, double>();
 
         public Competitor(string name, int age) //Constructor
         {
             this.name = name;
             this.age = age;
             id = getcompetitorNextID();
-            competitorJumps = null;
+           // competitorJumps = null;
 
             //List<Competitor> jumplist = new List<Competitor>();
         }
@@ -71,23 +71,42 @@ namespace simhopp
         }
 
 
-        public void addJumpTypeToCompetitor()
+        public void addJumpTypeToCompetitor( double point6)
         {
+
             
             var obj1 = new JumpType();
-           // var holdJump = $"{obj1.createCompleteJump()}";
-          
-            double holdPoints = 0;
+           //var holdJump = obj1.createCompleteJump(point1, point2, point3, point4, point5);
+            
+         
             var obj2 = new Points();
-            holdPoints = obj2.addPoints(9);
+            var holdPoint = obj2.addPoint(point6);
 
+            
+           competitorJumps.Add(obj1.createCompleteJump(5,3,5,2,3), obj2.addPoint(point6));
 
+            
 
-           
-
-       //   competitorJumps.Add(holdPoints, holdPoints);
 
         }
         
+      public void printCompetitorJumps()
+        {
+
+            foreach (var obj in competitorJumps)
+            {
+                Console.WriteLine($"Name: {obj.Key} , {obj.Value}");
+            }
+
+        }
+
+        public int countCompetitorJumps()//counts amount of jumps
+        {
+            int count = 0;
+
+            count = competitorJumps.Count();
+
+            return count;
+        }
     }
 }

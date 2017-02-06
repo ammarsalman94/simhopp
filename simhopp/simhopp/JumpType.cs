@@ -23,7 +23,13 @@ namespace simhopp
 
         }
 
+
         //jumpStats
+        public JumpType()
+        {
+
+        }
+
         public string ShowContentsjumpStats()
         {
             var sb = new StringBuilder();
@@ -216,6 +222,7 @@ namespace simhopp
             return sb.ToString();
 
         }
+
         public SortedDictionary<int, List<double>> addqtyScrews() // adding information to the qtyScrews dictionary
         {
             qtyScrews.Add(5, new List<double>());
@@ -266,6 +273,7 @@ namespace simhopp
             Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2 + " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
             // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
             Console.Write("\nCompleteJump:" + str);
+
             return str;
         }
 
@@ -275,6 +283,7 @@ namespace simhopp
             Console.WriteLine("\n\n\n---ANDRA VALET ---- \n\n");
             return createCompleteJump(5, "Isander/Mollbergare", 5, 5, 3, 4);
         }
+
 
 
         public double getDifficulty(string diveNumber)
