@@ -44,9 +44,11 @@ namespace simhopp
 
         } 
 
-        public void getPoints()
+        public float addPoints(float point)
         {
 
+
+            return point;
         }
     }
 }

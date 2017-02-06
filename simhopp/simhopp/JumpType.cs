@@ -247,9 +247,10 @@ namespace simhopp
         }
 
 
-        public string createCompleteJump(List<int>kID)
+        public string createCompleteJump()
         {
-           // List<int> kID = new List<int>(); // Key ID
+           // List<int> kID;
+            List<int> kID = new List<int>(); // Key ID
             double vID = 3; // Value ID
             string v2ID = "Framåt";
             var myKey = qtyScrews[kID[0]].FirstOrDefault(y => y == vID);
@@ -266,6 +267,7 @@ namespace simhopp
             Console.Write("\nCompleteJump:" + str);
             return str;
         }
+
 
     }
 
