@@ -83,7 +83,7 @@ namespace simhopp
             var holdPoint = obj2.addPoint(point6);
 
             
-           competitorJumps.Add(obj1.createCompleteJump(5,3,5,2,3), obj2.addPoint(point6));
+           competitorJumps.Add(obj1.createCompleteJump(2.5,"Tyska",5,3,5,2,3), obj2.addPoint(point6));
 
             
 
