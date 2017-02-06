@@ -255,12 +255,16 @@ namespace simhopp
         {
             int kID = 5; // Key ID
             double vID = 3; // Value ID
+            string v2ID = "Framåt";
             var myKey = qtyScrews[kID].FirstOrDefault(y => y == vID);
-   
-            var myKey2 = qtyScrews[kID].FirstOrDefault(y => y == vID);
-          //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
+            var myKey2 = qtyFlips[kID];
+            var myKey3 = jumpCombination[kID].FirstOrDefault(y => y == v2ID);
+            var myKey4 =jumpHeight[kID];
+            var myKey5 = startPos[kID];
 
-            Console.Write("Screws: " +myKey + "jumpHeight: " + myKey2);
+            //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
+
+            Console.Write("Screws: " +myKey + "Flips: " + myKey2+ "jumpCombo: " + myKey3 + "JumpHeight: " + myKey4 + "startPos" + myKey5);
         }
 
     }
