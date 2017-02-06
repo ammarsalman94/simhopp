@@ -114,7 +114,7 @@ namespace UnitTestSimhopp
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
-            jumpType.createCompleteJump();
+            jumpType.createCompleteJump(5,2,5,3,2);
 
         }
 
@@ -152,7 +152,7 @@ namespace UnitTestSimhopp
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
-            jumpType.createCompleteJump();
+           // jumpType.createCompleteJump();
 
 
 
