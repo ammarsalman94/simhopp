@@ -193,17 +193,12 @@ namespace simhopp
         }
         public SortedDictionary<int, double> addjumpHeight() // Adding information to the qtyFlips dictionary
         {
-            jumpHeight.Add(1, 0);
-            jumpHeight.Add(2, 0.5);
-            jumpHeight.Add(3, 1);
-            jumpHeight.Add(4, 1.5);
-            jumpHeight.Add(5, 2);
-            jumpHeight.Add(6, 2.5);
-            jumpHeight.Add(7, 3);
-            jumpHeight.Add(8, 3.5);
-            jumpHeight.Add(9, 4);
-            jumpHeight.Add(10, 4.5);
-            jumpHeight.Add(11, 5);
+            jumpHeight.Add(1, 1);
+            jumpHeight.Add(2, 3);
+            jumpHeight.Add(3, 5);
+            jumpHeight.Add(4, 7.5);
+            jumpHeight.Add(5, 10);
+
 
             return jumpHeight;
         }
