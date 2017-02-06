@@ -271,6 +271,12 @@ namespace simhopp
         }
 
 
+        public string returnJump()
+        {
+            Console.WriteLine("\n\n\n---ANDRA VALET ---- \n\n");
+            return createCompleteJump(5,3,5,2,3,4);
+        }
+
 
         public double getDifficulty(string diveNumber)
         {
