@@ -17,7 +17,7 @@ namespace simhopp
         public int qtyOfJumps { get; set; } = 0;
 
         // private float  score;
-        private SortedList<float, List<string>> competitorJumps = new SortedList<float, List<string>>();
+        private SortedList<double, List<string>> competitorJumps = new SortedList<double, List<string>>();
 
         public Competitor(string name, int age) //Constructor
         {
@@ -73,13 +73,11 @@ namespace simhopp
 
         public void addJumpTypeToCompetitor()
         {
-
-            string holdJump;
+            
             var obj1 = new JumpType();
-           holdJump = obj1.createCompleteJump();
-          Console.WriteLine($"holdJump:{holdJump}" );
-
-            float holdPoints = 0;
+            var holdJump = $"{obj1.createCompleteJump()}";
+          
+            double holdPoints = 0;
             var obj2 = new Points();
             holdPoints = obj2.addPoints(9);
 
@@ -87,7 +85,7 @@ namespace simhopp
 
            
 
-          competitorJumps.Add(holdPoints, holdJump);
+       //   competitorJumps.Add(holdPoints, holdPoints);
 
         }
         
