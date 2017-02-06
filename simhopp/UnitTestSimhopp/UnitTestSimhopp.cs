@@ -114,49 +114,11 @@ namespace UnitTestSimhopp
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
-            jumpType.createCompleteJump(5,5,3,3,2,2);
+            jumpType.createCompleteJump(2.5,"Tyska",5,5,3,5,2,2);
 
         }
 
-        [TestMethod]
-        public void testJumpTypeToCompetitor()
-        {
-
-
-            var jumpType = new JumpType();
-            var competitor = new Competitor("Joel", 12);
-
-            Console.WriteLine("-----     StartPos[0]       -----");
-            SortedDictionary<int, string> s = jumpType.addStartPos();
-            Console.WriteLine(jumpType.ShowContentsStartPos());
-
-            Console.WriteLine("-----     jumpCombo[1]       -----");
-            SortedDictionary<int, List<string>> d = jumpType.addjumpCombination();
-            Console.WriteLine(jumpType.ShowContentsjumpCombination());
-
-            Console.WriteLine("-----     qtyFlips[2]       -----");
-            SortedDictionary<int, double> e = jumpType.addqtyFlips();
-            Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
-
-            Console.WriteLine("-----     qtyScrews[3]       -----");
-            SortedDictionary<int, List<double>> h = jumpType.addqtyScrews();
-            Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
-
-            Console.WriteLine("-----     jumpstats[4]       -----");
-            SortedDictionary<int, string> g = jumpType.addjumpStats();
-            Console.WriteLine(jumpType.ShowContentsjumpStats());
-
-            Console.WriteLine("-----     jumpHeight[5]       -----");
-            SortedDictionary<int, double> f = jumpType.addjumpHeight();
-            Console.WriteLine(jumpType.ShowContentsaddjumpHeight());
-
-            Console.WriteLine("-----     Create Complete Jump       -----");
-
-           // jumpType.createCompleteJump();
-
-
-
-        }
+        
 
         [TestMethod]
         public void testPoints()
