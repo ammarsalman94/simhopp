@@ -22,6 +22,7 @@ namespace simhopp
             return c;
 
         }
+
         //jumpStats
         public string ShowContentsjumpStats()
         {
@@ -193,17 +194,12 @@ namespace simhopp
         }
         public SortedDictionary<int, double> addjumpHeight() // Adding information to the qtyFlips dictionary
         {
-            jumpHeight.Add(1, 0);
-            jumpHeight.Add(2, 0.5);
-            jumpHeight.Add(3, 1);
-            jumpHeight.Add(4, 1.5);
-            jumpHeight.Add(5, 2);
-            jumpHeight.Add(6, 2.5);
-            jumpHeight.Add(7, 3);
-            jumpHeight.Add(8, 3.5);
-            jumpHeight.Add(9, 4);
-            jumpHeight.Add(10, 4.5);
-            jumpHeight.Add(11, 5);
+            jumpHeight.Add(1, 1);
+            jumpHeight.Add(2, 3);
+            jumpHeight.Add(3, 5);
+            jumpHeight.Add(4, 7.5);
+            jumpHeight.Add(5, 10);
+
 
             return jumpHeight;
         }
@@ -251,7 +247,7 @@ namespace simhopp
         }
 
 
-        public string createCompleteJump(params int[] kID)
+        public string createCompleteJump(List<int>kID)
         {
            // List<int> kID = new List<int>(); // Key ID
             double vID = 3; // Value ID
@@ -270,10 +266,36 @@ namespace simhopp
             Console.Write("\nCompleteJump:" + str);
             return str;
         }
-        
+
+
+
+        public double getDifficulty(string diveNumber)
+        {
+            double difficulty = 0;
+
+            if (diveNumber.Length == 4)
+            {
+
+
+            }
+            else if (diveNumber.Length == 5)
+            {
+
+
+
+            }
+            else
+                return 0;
+
+
+
+
+            return difficulty;
+        }
     }
 
 
        
 
 }
+
