@@ -17,13 +17,14 @@ namespace simhopp
         public int    qtyOfJumps { get; set; } = 0;
 
         // private float  score;
-        private List<JumpType> competitorJumps = new List<JumpType>();
+        private SortedList<Points, List<JumpType>> competitorJumps = new SortedList<Points, List<JumpType>>();
 
         public Competitor(string name, int age) //Constructor
         {
             this.name = name;
             this.age = age;
             id = getcompetitorNextID();
+            competitorJumps = null;
 
             //List<Competitor> jumplist = new List<Competitor>();
         }
@@ -70,7 +71,15 @@ namespace simhopp
         }
 
         
- 
+        public void addJumpTypeToCompetitor()
+        {
+            var obj = new JumpType();
+            obj.createCompleteJump();
+
+
+
+
+        }
         
     }
 }

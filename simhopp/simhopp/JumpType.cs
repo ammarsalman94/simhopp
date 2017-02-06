@@ -22,6 +22,7 @@ namespace simhopp
             return c;
 
         }
+
         //jumpStats
         public string ShowContentsjumpStats()
         {
