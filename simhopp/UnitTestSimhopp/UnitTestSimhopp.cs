@@ -264,7 +264,8 @@ namespace UnitTestSimhopp
         {
 
             var competition = new StoreCompetition();
-
+            var jt          = new JumpType();
+            
             var game = new Competition("Wt-game");
 
             competition.addCompetition(game);
@@ -284,6 +285,7 @@ namespace UnitTestSimhopp
             var competitor5 = new Competitor("bertil", 12);
             var competitor6 = new Competitor("kjell", 14);
 
+            
             game.addCompetitorToList(competitor1);
             game.addCompetitorToList(competitor2);
             game.addCompetitorToList(competitor3);
@@ -297,6 +299,7 @@ namespace UnitTestSimhopp
             game.addJudgeToList(judge4);
             game.addJudgeToList(judge5);
             game.addJudgeToList(judge6);
+
 
             Assert.AreEqual(5, competition.countOldCompetitions());
         }
@@ -338,6 +341,8 @@ namespace UnitTestSimhopp
             Assert.AreEqual(6,obj.countCompetitorJumps());
 
         }
+
+        
 
     }
 }

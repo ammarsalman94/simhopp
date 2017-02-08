@@ -223,7 +223,7 @@ namespace simhopp
         public double getDifficulty(string diveNumber)
         {
             double fail = 0;
-            double difficulty;
+            double difficulty =0;
             //1(1-4)
             if (diveNumber.Split(' ')[0] == "Framåt" || diveNumber.Split(' ')[0] == "Bakåt" || diveNumber.Split(' ')[0] == "Isander/Mollbergare" || diveNumber.Split(' ')[0] == "Tyska")
             {
@@ -242,7 +242,7 @@ namespace simhopp
                                 //5(1-5)(1-10)
                                 if (diveNumber.Split(' ')[5] == "1" || diveNumber.Split(' ')[5] == "3" || diveNumber.Split(' ')[5] == "5" || diveNumber.Split(' ')[5] == "7,5" || diveNumber.Split(' ')[5] == "10")
                                 {
-                                    return difficulty = 4;
+                                    return difficulty += 4;
                                 }
                                 else
                                     return fail;
