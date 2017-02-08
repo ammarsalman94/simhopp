@@ -22,10 +22,9 @@ namespace simhopp
         }
 
 
-        public double pointResult(double j1,double j2,double j3, double j4, double j5) //returning the result to the judge
+        public double pointResult(double j1,double j2,double j3, double j4, double j5, double difficulty) //returning the result to the judge
         {
             double n = 0;
-            double difficulty = 10;
             List<double> pointList = new List<double>(); 
             pointList.Add(j1);
             pointList.Add(j2);
