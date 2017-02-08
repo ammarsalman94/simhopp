@@ -27,12 +27,12 @@ namespace simhopp
         //jumpStats
         public JumpType()
         {
-            /*SortedDictionary<int, string> s = */addStartPos();
-            /*SortedDictionary<int, List<string>> d = */addjumpCombination();
-            /*SortedDictionary<int, double> e = */addqtyFlips();
-            /*SortedDictionary<int, List<double>> h = */addqtyScrews();
-            /*SortedDictionary<int, string> g = */addjumpStats();
-            /*SortedDictionary<int, double> f = */addjumpHeight();
+            addStartPos();
+            addjumpCombination();
+            addqtyFlips();
+            addqtyScrews();
+            addjumpStats();
+            addjumpHeight();
 
         }
 
