@@ -18,7 +18,7 @@ namespace simhopp
         public int qtyOfJumps { get; set; } = 0;
 
         // private float jumptype and score;
-        public Dictionary<int, Dictionary<string, double>> competitorJumps = new Dictionary<int, Dictionary<string, double>>();
+        public Dictionary<int, Dictionary<string, double>> competitorJumps = new Dictionary<int, Dictionary<string, double>>(); //id, jumptype, point
 
         public Competitor(string name, int age) //Constructor
         {
@@ -104,10 +104,10 @@ namespace simhopp
             {
                // Console.WriteLine($"jumpid: {obj.Keys}");
 
-                foreach (var innerpai in pair.Value)
+                foreach (var innerpair in pair.Value)
                 {
                     
-                    Console.WriteLine($"jumptype and point: {obj2}");
+                    Console.WriteLine("{0},{1},{2}", pair.Key, innerpair.Key, innerpair.Value);
 
                 }
                 
@@ -122,23 +122,32 @@ namespace simhopp
             return count;
         }
 
-        //public void searchCompetitorjumps(int id)
-        //{
-        //    if (competitorJumps.ContainsKey(id))
-        //    {
-        //        Console.WriteLine($"{id}");
-        //        competitorJumps.ContainsValue();
 
+
+        //    public void searchCompetitorjumps(int id)
+        //    {
+
+        //        if (competitorJumps.ContainsKey(id))
+        //        {
+        //            competitorJumps.ElementAt(id);
+        //            Console.WriteLine($"{competitorJumps.ElementAt(id-1)}");
+        //        }
+
+        //        else
+        //        {
+        //            Console.WriteLine("Id does not exist");
+        //        }
         //    }
-        //}
+
 
         public void searchCompetitorjumps(int id)
         {
-            
+
             if (competitorJumps.ContainsKey(id))
             {
-                competitorJumps.ElementAt(id);
-                Console.WriteLine($"{competitorJumps.ElementAt(id-1)}");
+               var pri = competitorJumps.ElementAt(id);
+                Console.WriteLine($"{competitorJumps.ElementAt(id - 1)}");
+                
             }
 
             else
@@ -147,4 +156,7 @@ namespace simhopp
             }
         }
     }
+}
+
+
 }
