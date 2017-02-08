@@ -102,10 +102,10 @@ namespace simhopp
             {
                // Console.WriteLine($"jumpid: {obj.Keys}");
 
-                foreach (var innerpai in pair.Value)
+                foreach (var innerpair in pair.Value)
                 {
                     
-                    Console.WriteLine($"jumptype and point: {obj2}");
+              //      Console.WriteLine($"jumptype and point: {obj2}");
 
                 }
                 

@@ -286,7 +286,11 @@ namespace UnitTestSimhopp
             var competitor5 = new Competitor("bertil", 12);
             var competitor6 = new Competitor("kjell", 14);
 
-            
+            competitor1.addJumpTypeToCompetitor(0, 5, 5, "Mellanhopp", 3, 5, 3.5, 1, 2);
+            competitor2.addJumpTypeToCompetitor(0, 1, 1, "Flygande", 3, 5, 3.5, 1, 4);
+            competitor3.addJumpTypeToCompetitor(0, 2, 2, "EjFlygande", 3, 5, 3.5, 1, 4);
+
+        
             game.addCompetitorToList(competitor1);
             game.addCompetitorToList(competitor2);
             game.addCompetitorToList(competitor3);
@@ -301,8 +305,9 @@ namespace UnitTestSimhopp
             game.addJudgeToList(judge5);
             game.addJudgeToList(judge6);
 
+            Console.Write("");
 
-            Assert.AreEqual(5, competition.countOldCompetitions());
+
         }
 
         [TestMethod]
