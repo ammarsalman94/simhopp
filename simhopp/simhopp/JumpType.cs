@@ -27,7 +27,13 @@ namespace simhopp
         //jumpStats
         public JumpType()
         {
-            
+            addStartPos();
+            addjumpCombination();
+            addqtyFlips();
+            addqtyScrews();
+            addjumpStats();
+            addjumpHeight();
+
         }
 
         public string ShowContentsjumpStats()
@@ -135,16 +141,16 @@ namespace simhopp
         {
             jumpCombination.Add(1, new List<string>());
             jumpCombination[1].Add("Flygande");
-            jumpCombination[1].Add("EjFlygande");
+            jumpCombination[1].Add("Ej Flygande");
             jumpCombination.Add(2, new List<string>());
             jumpCombination[2].Add("Flygande");
-            jumpCombination[2].Add("EjFlygande");
+            jumpCombination[2].Add("Ej Flygande");
             jumpCombination.Add(3, new List<string>());
             jumpCombination[3].Add("Flygande");
-            jumpCombination[3].Add("EjFlygande");
+            jumpCombination[3].Add("Ej Flygande");
             jumpCombination.Add(4, new List<string>());
             jumpCombination[4].Add("Flygande");
-            jumpCombination[4].Add("EjFlygande");
+            jumpCombination[4].Add("Ej Flygande");
             jumpCombination.Add(5, new List<string>());
             jumpCombination[5].Add("Framåt");
             jumpCombination[5].Add("Bakåt");
@@ -270,9 +276,9 @@ namespace simhopp
             //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
 
             var str = $"{myKey} {myKey2} {myKey3} {myKey4} {myKey5} {myKey6}";
-            Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2 + " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
+            //Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2 + " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
             // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
-            Console.Write("\nCompleteJump:" + str);
+            //Console.Write("\nCompleteJump:" + str);
 
             return str;
         }
@@ -303,12 +309,12 @@ namespace simhopp
                         //if (diveNumber.Split(' ')[3] == "0" || diveNumber.Split(' ')[3] == "0,5" || diveNumber.Split(' ')[3] == "1" || diveNumber.Split(' ')[3] == "1,5" || diveNumber.Split(' ')[3] == "2" || diveNumber.Split(' ')[3] == "2,5" || diveNumber.Split(' ')[3] == "3" || diveNumber.Split(' ')[3] == "3,5" || diveNumber.Split(' ')[3] == "4" || diveNumber.Split(' ')[3] == "4,5" || diveNumber.Split(' ')[3] == "5")
                         //{
                         //4(1-4)
-                        if (diveNumber.Split(' ')[3] == "Rak" || diveNumber.Split(' ')[4] == "Pik" || diveNumber.Split(' ')[4] == "Gruppering" || diveNumber.Split(' ')[4] == "Valfri")
+                        if (diveNumber.Split(' ')[3] == "Rak" || diveNumber.Split(' ')[3] == "Pik" || diveNumber.Split(' ')[3] == "Gruppering" || diveNumber.Split(' ')[3] == "Valfri")
                         {
                             //5(1-5)(1-10)
-                            if (diveNumber.Split(' ')[4] == "1" || diveNumber.Split(' ')[5] == "3" || diveNumber.Split(' ')[5] == "5" || diveNumber.Split(' ')[5] == "7,5" || diveNumber.Split(' ')[5] == "10")
+                            if (diveNumber.Split(' ')[4] == "1" || diveNumber.Split(' ')[4] == "3" || diveNumber.Split(' ')[4] == "5" || diveNumber.Split(' ')[4] == "7,5" || diveNumber.Split(' ')[4] == "10")
                             {
-                                //Ge difficulty ett värde!
+                                return difficulty = 4;
                             }
                             else
                                 return fail;
@@ -320,63 +326,28 @@ namespace simhopp
                     else
                         return fail;
                 }
-                //1(5)
-                else if (diveNumber.Split(' ')[0] == "Skruvhopp")
+                else
+                    return fail;
+            }
+            //1(5)
+            else if (diveNumber.Split(' ')[0] == "Skruvhopp")
+            {
+                //2(5)(Framåt, Bakåt, Isander/Mollbergare, Tyska)
+                if (diveNumber.Split(' ')[1] == "Framåt" || diveNumber.Split(' ')[1] == "Bakåt" || diveNumber.Split(' ')[1] == "Isander/Mollbergare" || diveNumber.Split(' ')[1] == "Tyska")
                 {
-                    //2(5)(Framåt, Bakåt, Isander/Mollbergare, Tyska)
-                    if (diveNumber.Split(' ')[1] == "Framåt" || diveNumber.Split(' ')[1] == "Bakåt" || diveNumber.Split(' ')[1] == "Isander/Mollbergare" || diveNumber.Split(' ')[1] == "Tyska")
+                    //3(1-11)(0-5)
+                    if (diveNumber.Split(' ')[2] == "0" || diveNumber.Split(' ')[2] == "0,5" || diveNumber.Split(' ')[2] == "1" || diveNumber.Split(' ')[2] == "1,5" || diveNumber.Split(' ')[2] == "2" || diveNumber.Split(' ')[2] == "2,5" || diveNumber.Split(' ')[2] == "3" || diveNumber.Split(' ')[2] == "3,5" || diveNumber.Split(' ')[2] == "4" || diveNumber.Split(' ')[2] == "4,5" || diveNumber.Split(' ')[2] == "5")
                     {
-                        //3(1-11)(0-5)
-                        if (diveNumber.Split(' ')[2] == "0" || diveNumber.Split(' ')[2] == "0,5" || diveNumber.Split(' ')[2] == "1" || diveNumber.Split(' ')[2] == "1,5" || diveNumber.Split(' ')[2] == "2" || diveNumber.Split(' ')[2] == "2,5" || diveNumber.Split(' ')[2] == "3" || diveNumber.Split(' ')[2] == "3,5" || diveNumber.Split(' ')[2] == "4" || diveNumber.Split(' ')[2] == "4,5" || diveNumber.Split(' ')[2] == "5")
+                        //4(5-6)(0-5)
+                        if (diveNumber.Split(' ')[3] == "0" || diveNumber.Split(' ')[3] == "0,5" || diveNumber.Split(' ')[3] == "1" || diveNumber.Split(' ')[3] == "1,5" || diveNumber.Split(' ')[3] == "2" || diveNumber.Split(' ')[3] == "2,5" || diveNumber.Split(' ')[3] == "3" || diveNumber.Split(' ')[3] == "3,5" || diveNumber.Split(' ')[3] == "4" || diveNumber.Split(' ')[3] == "4,5" || diveNumber.Split(' ')[3] == "5")
                         {
-                            //4(5-6)(0-5)
-                            if (diveNumber.Split(' ')[3] == "0" || diveNumber.Split(' ')[3] == "0,5" || diveNumber.Split(' ')[3] == "1" || diveNumber.Split(' ')[3] == "1,5" || diveNumber.Split(' ')[3] == "2" || diveNumber.Split(' ')[3] == "2,5" || diveNumber.Split(' ')[3] == "3" || diveNumber.Split(' ')[3] == "3,5" || diveNumber.Split(' ')[3] == "4" || diveNumber.Split(' ')[3] == "4,5" || diveNumber.Split(' ')[3] == "5")
+                            //4(1-4)
+                            if (diveNumber.Split(' ')[4] == "Rak" || diveNumber.Split(' ')[4] == "Pik" || diveNumber.Split(' ')[4] == "Gruppering" || diveNumber.Split(' ')[4] == "Valfri")
                             {
-                                //4(1-4)
-                                if (diveNumber.Split(' ')[4] == "Rak" || diveNumber.Split(' ')[4] == "Pik" || diveNumber.Split(' ')[4] == "Gruppering" || diveNumber.Split(' ')[4] == "Valfri")
+                                //5(1-5)(1-10)
+                                if (diveNumber.Split(' ')[5] == "1" || diveNumber.Split(' ')[5] == "3" || diveNumber.Split(' ')[5] == "5" || diveNumber.Split(' ')[5] == "7,5" || diveNumber.Split(' ')[5] == "10")
                                 {
-                                    //5(1-5)(1-10)
-                                    if (diveNumber.Split(' ')[5] == "1" || diveNumber.Split(' ')[5] == "3" || diveNumber.Split(' ')[5] == "5" || diveNumber.Split(' ')[5] == "7,5" || diveNumber.Split(' ')[5] == "10")
-                                    {
-                                        //Ge difficulty ett värde!
-                                    }
-                                    else
-                                        return fail;
-                                }
-                                else
-                                    return fail;
-                            }
-                            else
-                                return fail;
-                        }
-                        else
-                            return fail;
-                    }
-                    else
-                        return fail;
-                }
-                //1(6)
-                else if (diveNumber.Split(' ')[0] == "Handstans")
-                {
-                    //2(6)(Framåt, Bakåt, Mellanhopp)
-                    if (diveNumber.Split(' ')[1] == "Framåt" || diveNumber.Split(' ')[1] == "Bakåt" || diveNumber.Split(' ')[1] == "Mellanhopp")
-                    {
-                        //3(1-11)(0-5)
-                        if (diveNumber.Split(' ')[2] == "0" || diveNumber.Split(' ')[2] == "0,5" || diveNumber.Split(' ')[2] == "1" || diveNumber.Split(' ')[2] == "1,5" || diveNumber.Split(' ')[2] == "2" || diveNumber.Split(' ')[2] == "2,5" || diveNumber.Split(' ')[2] == "3" || diveNumber.Split(' ')[2] == "3,5" || diveNumber.Split(' ')[2] == "4" || diveNumber.Split(' ')[2] == "4,5" || diveNumber.Split(' ')[2] == "5")
-                        {
-                            //4(5-6)(0-5)
-                            if (diveNumber.Split(' ')[3] == "0" || diveNumber.Split(' ')[3] == "0,5" || diveNumber.Split(' ')[3] == "1" || diveNumber.Split(' ')[3] == "1,5" || diveNumber.Split(' ')[3] == "2" || diveNumber.Split(' ')[3] == "2,5" || diveNumber.Split(' ')[3] == "3" || diveNumber.Split(' ')[3] == "3,5" || diveNumber.Split(' ')[3] == "4" || diveNumber.Split(' ')[3] == "4,5" || diveNumber.Split(' ')[3] == "5")
-                            {
-                                //4(1-4)
-                                if (diveNumber.Split(' ')[4] == "Rak" || diveNumber.Split(' ')[4] == "Pik" || diveNumber.Split(' ')[4] == "Gruppering" || diveNumber.Split(' ')[4] == "Valfri")
-                                {
-                                    //5(1-5)(1-10)
-                                    if (diveNumber.Split(' ')[5] == "1" || diveNumber.Split(' ')[5] == "3" || diveNumber.Split(' ')[5] == "5" || diveNumber.Split(' ')[5] == "7,5" || diveNumber.Split(' ')[5] == "10")
-                                    {
-                                        //Ge difficulty ett värde!
-                                    }
-                                    else
-                                        return fail;
+                                    return difficulty = 7;
                                 }
                                 else
                                     return fail;
@@ -392,13 +363,45 @@ namespace simhopp
                 }
                 else
                     return fail;
-
+            }
+            //1(6)
+            else if (diveNumber.Split(' ')[0] == "Handstans")
+            {
+                //2(6)(Framåt, Bakåt, Mellanhopp)
+                if (diveNumber.Split(' ')[1] == "Framåt" || diveNumber.Split(' ')[1] == "Bakåt" || diveNumber.Split(' ')[1] == "Mellanhopp")
+                {
+                    //3(1-11)(0-5)
+                    if (diveNumber.Split(' ')[2] == "0" || diveNumber.Split(' ')[2] == "0,5" || diveNumber.Split(' ')[2] == "1" || diveNumber.Split(' ')[2] == "1,5" || diveNumber.Split(' ')[2] == "2" || diveNumber.Split(' ')[2] == "2,5" || diveNumber.Split(' ')[2] == "3" || diveNumber.Split(' ')[2] == "3,5" || diveNumber.Split(' ')[2] == "4" || diveNumber.Split(' ')[2] == "4,5" || diveNumber.Split(' ')[2] == "5")
+                    {
+                        //4(5-6)(0-5)
+                        if (diveNumber.Split(' ')[3] == "0" || diveNumber.Split(' ')[3] == "0,5" || diveNumber.Split(' ')[3] == "1" || diveNumber.Split(' ')[3] == "1,5" || diveNumber.Split(' ')[3] == "2" || diveNumber.Split(' ')[3] == "2,5" || diveNumber.Split(' ')[3] == "3" || diveNumber.Split(' ')[3] == "3,5" || diveNumber.Split(' ')[3] == "4" || diveNumber.Split(' ')[3] == "4,5" || diveNumber.Split(' ')[3] == "5")
+                        {
+                            //4(1-4)
+                            if (diveNumber.Split(' ')[4] == "Rak" || diveNumber.Split(' ')[4] == "Pik" || diveNumber.Split(' ')[4] == "Gruppering" || diveNumber.Split(' ')[4] == "Valfri")
+                            {
+                                //5(1-5)(1-10)
+                                if (diveNumber.Split(' ')[5] == "1" || diveNumber.Split(' ')[5] == "3" || diveNumber.Split(' ')[5] == "5" || diveNumber.Split(' ')[5] == "7,5" || diveNumber.Split(' ')[5] == "10")
+                                {
+                                    return difficulty = 10;
+                                }
+                                else
+                                    return fail;
+                            }
+                            else
+                                return fail;
+                        }
+                        else
+                            return fail;
+                    }
+                    else
+                        return fail;
+                }
+                else
+                    return fail;
             }
             else
                 return fail;
-            //Om allt funkar!
-
-            return difficulty;
+            
 
         }
 
