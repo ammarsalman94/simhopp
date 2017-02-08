@@ -18,13 +18,7 @@ namespace simhopp
         public string name;
         private List<Competitor> competitorList = new List<Competitor>();
         private List<Judge> judgeList = new List<Judge>();
-       
-
-
-
-
         //Functions
-
         public Competition(string name) //Creating competition
         {
             id = getCompetitionNextID();
@@ -36,7 +30,6 @@ namespace simhopp
         {
             return competitionId++;
         }
-
         public void removeCompetitorFromList(int unId)
         {
 
@@ -48,7 +41,6 @@ namespace simhopp
                 }
             }
         }
-
         public void removeJudgeFromList(int unId)
         {
 
@@ -60,7 +52,6 @@ namespace simhopp
                 }
             }
         }
-
         public void printCompetitorList()
         {
             Console.WriteLine("Competitorlist");
