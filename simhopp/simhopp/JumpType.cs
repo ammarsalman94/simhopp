@@ -27,7 +27,7 @@ namespace simhopp
         //jumpStats
         public JumpType()
         {
-
+            
         }
 
         public string ShowContentsjumpStats()
@@ -135,16 +135,16 @@ namespace simhopp
         {
             jumpCombination.Add(1, new List<string>());
             jumpCombination[1].Add("Flygande");
-            jumpCombination[1].Add("Ej Flygande");
+            jumpCombination[1].Add("EjFlygande");
             jumpCombination.Add(2, new List<string>());
             jumpCombination[2].Add("Flygande");
-            jumpCombination[2].Add("Ej Flygande");
+            jumpCombination[2].Add("EjFlygande");
             jumpCombination.Add(3, new List<string>());
             jumpCombination[3].Add("Flygande");
-            jumpCombination[3].Add("Ej Flygande");
+            jumpCombination[3].Add("EjFlygande");
             jumpCombination.Add(4, new List<string>());
             jumpCombination[4].Add("Flygande");
-            jumpCombination[4].Add("Ej Flygande");
+            jumpCombination[4].Add("EjFlygande");
             jumpCombination.Add(5, new List<string>());
             jumpCombination[5].Add("Framåt");
             jumpCombination[5].Add("Bakåt");
