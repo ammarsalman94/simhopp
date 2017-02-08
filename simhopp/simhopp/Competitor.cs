@@ -25,10 +25,12 @@ namespace simhopp
             this.name = name;
             this.age = age;
             id = getcompetitorNextID();
-            // competitorJumps = null;
+            competitorJumps = new Dictionary<int, Dictionary<string, double>>();
 
-            //List<Competitor> jumplist = new List<Competitor>();
-        }
+        // competitorJumps = null;
+
+        //List<Competitor> jumplist = new List<Competitor>();
+    }
         public void jump()
         {
 
