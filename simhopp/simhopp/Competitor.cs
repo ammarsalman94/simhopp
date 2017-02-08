@@ -18,14 +18,14 @@ namespace simhopp
         public int qtyOfJumps { get; set; } = 0;
 
         // private float jumptype and score;
-        public Dictionary<int, string> competitorJumps = new Dictionary<int, string>();
+        public Dictionary<int, Dictionary<string, double>> competitorJumps = new Dictionary<int, Dictionary<string, double>>();
 
         public Competitor(string name, int age) //Constructor
         {
             this.name = name;
             this.age = age;
             id = getcompetitorNextID();
-           // competitorJumps = null;
+            // competitorJumps = null;
 
             //List<Competitor> jumplist = new List<Competitor>();
         }
@@ -76,18 +76,39 @@ namespace simhopp
         }
 
 
-        public void addJumpTypeToCompetitor(int var1, int var2, string jumpstyle, int var3, int var4, double var5, int var6, int var7)
+        public void addJumpTypeToCompetitor(double point, int var1, int var2, string jumpstyle, int var3, int var4, double var5, int var6, int var7)
         {
             var obj1 = new JumpType();
             var holdJump = obj1.createCompleteJump(var1, var2, jumpstyle, var3, var4, var5, var6, var7);
-            competitorJumps.Add(getJumpNextID(), holdJump);
+            var points = new Points();
+            var holdPoint = points.SendPointToCompetitor(2);
+           
+
+            competitorJumps.Add(getJumpNextID(), new Dictionary<string, double>() { { holdJump, holdPoint} });
+                
+               
         }
+
+
+        //public Dictionary<int, Dictionary<string, double>> addToCompetitorJumps(int hej1,string hej2,double hej3) 
+        //{
+        //    competitorJumps.Add(hej1 , new Dictionary<string, double>(hej2, hej3) { });
+        //    return competitorJumps;    
+        //}
 
         public void printCompetitorJumps()
         {
-            foreach (var obj in competitorJumps)
+            foreach (var pair in competitorJumps)
             {
-                Console.WriteLine($"ChangeIt: {obj.Key} , {obj.Value}");
+               // Console.WriteLine($"jumpid: {obj.Keys}");
+
+                foreach (var innerpai in pair.Value)
+                {
+                    
+                    Console.WriteLine($"jumptype and point: {obj2}");
+
+                }
+                
             }
 
         }
@@ -116,10 +137,8 @@ namespace simhopp
             {
                 competitorJumps.ElementAt(id);
                 Console.WriteLine($"{competitorJumps.ElementAt(id-1)}");
-              
-
-
             }
+
             else
             {
                 Console.WriteLine("Id does not exist");

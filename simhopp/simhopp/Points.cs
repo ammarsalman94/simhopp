@@ -43,7 +43,7 @@ namespace simhopp
 
         } 
 
-        public double addPoint(double point)
+        public double SendPointToCompetitor(double point)
         {
 
 
