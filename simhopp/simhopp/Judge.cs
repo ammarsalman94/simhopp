@@ -41,9 +41,10 @@ namespace simhopp
 
         }
 
-        public void sendScoreToCompetitor()
+        public void sendScoreToCompetitor(double point)
         {
-
+            var points = new Points();
+            points.SendPointToCompetitor(point);
         }
 
         public double setPoint()

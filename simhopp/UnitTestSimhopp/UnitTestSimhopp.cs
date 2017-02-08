@@ -125,6 +125,7 @@ namespace UnitTestSimhopp
         {
             var points = new Points();
 
+
             Assert.AreEqual(180, points.pointResult(1.6, 2, 6, 10, 3,4));
 
 
@@ -323,20 +324,21 @@ namespace UnitTestSimhopp
         {
             var obj = new Competitor("frans", 23);
 
-            obj.addJumpTypeToCompetitor(5, 5, "Isander/Mollbergare", 3, 5, 3.5, 1, 5);
+            obj.addJumpTypeToCompetitor(1,5, 5, "Isander/Mollbergare", 3, 5, 3.5, 1, 5);
 
-            obj.addJumpTypeToCompetitor(5, 5, "Bakåt", 3, 5, 3.5, 1, 3);
+            obj.addJumpTypeToCompetitor(1,5, 5, "Bakåt", 3, 5, 3.5, 1, 3);
 
-            obj.addJumpTypeToCompetitor(6, 6, "Framåt", 3, 5, 3.5, 1, 1);
-            obj.addJumpTypeToCompetitor(5, 5, "Mellanhopp", 3, 5, 3.5, 1, 2);
-            obj.addJumpTypeToCompetitor(1, 1, "Flygande", 3, 5, 3.5, 1, 4);
-            obj.addJumpTypeToCompetitor(2, 2, "EjFlygande", 3, 5, 3.5, 1, 4);
+            obj.addJumpTypeToCompetitor(1,6, 6, "Framåt", 3, 5, 3.5, 1, 1);
+            obj.addJumpTypeToCompetitor(2,5, 5, "Mellanhopp", 3, 5, 3.5, 1, 2);
+            obj.addJumpTypeToCompetitor(3,1, 1, "Flygande", 3, 5, 3.5, 1, 4);
+            obj.addJumpTypeToCompetitor(4, 2, 2, "EjFlygande", 3, 5, 3.5, 1, 4);
 
             obj.printCompetitorJumps();
-            Console.WriteLine("Search for id that exists:");
-            obj.searchCompetitorjumps(2);
-            Console.WriteLine("Search for id that does not exist:");
-            obj.searchCompetitorjumps(200);
+
+            //Console.WriteLine("Search for id that exists:");
+            //obj.searchCompetitorjumps(2);
+            //Console.WriteLine("Search for id that does not exist:");
+            //obj.searchCompetitorjumps(200);
 
             Assert.AreEqual(6,obj.countCompetitorJumps());
 
