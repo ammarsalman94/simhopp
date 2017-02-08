@@ -77,7 +77,7 @@ namespace simhopp
             
             var obj1 = new JumpType();
 
-            obj1.createCompleteJump(2.5, "Tyska", 5, 3, 5, 2, 3);
+          //  obj1.createCompleteJump(2.5, "Tyska", 5, 3, 5, 2, 3);
             //var holdJump = obj1.createCompleteJump(point1, point2, point3, point4, point5);
             
          
@@ -85,7 +85,7 @@ namespace simhopp
             var holdPoint = obj2.addPoint(point6);
 
             
-           competitorJumps.Add(obj1.createCompleteJump(2.5,"Tyska",5,3,5,2,3), obj2.addPoint(point6));
+      //     competitorJumps.Add(obj1.createCompleteJump(2.5,"Tyska",5,3,5,2,3), obj2.addPoint(point6));
 
             
 

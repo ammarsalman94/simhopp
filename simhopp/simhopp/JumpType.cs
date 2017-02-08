@@ -23,8 +23,6 @@ namespace simhopp
 
         }
 
-
-        //jumpStats
         public JumpType()
         {
             addStartPos();
@@ -33,7 +31,6 @@ namespace simhopp
             addqtyScrews();
             addjumpStats();
             addjumpHeight();
-
         }
 
         public string ShowContentsjumpStats()
@@ -44,58 +41,15 @@ namespace simhopp
                 sb.Append(string.Format("key {0} is {1} \n", item.Key, item.Value));
             }
             return sb.ToString();
-            //    var str1 = "";
-            //    var str2 = "";
-            //    foreach (KeyValuePair<string, List<int>> item in jumpStats)
-            //    {
-            //        str1 = $"{item.Key} , has {item.Value.Count()} entries with the values: ";
-            //        foreach (var item2 in item.Value)
-            //        {
-            //            str2 += $"{item2} ";
-            //        }
-
-            //    }
-            //    return  "" + str1 + str2;
         }
         public SortedDictionary<int, string> addjumpStats() //Adding information about the jumpStyle to the dictionary
         {
             try
             {
-                //jumpStats.Add("Rak", new List<double>()); // A
-                //jumpStats["Rak"].Add(1);
-                //jumpStats["Rak"].Add(3);
-                //jumpStats["Rak"].Add(5);
-                //jumpStats["Rak"].Add(7.5);
-                //jumpStats["Rak"].Add(10);
-
-                //jumpStats.Add("Pik", new List<double>()); // B
-                //jumpStats["Pik"].Add(1);
-                //jumpStats["Pik"].Add(3);
-                //jumpStats["Pik"].Add(5);
-                //jumpStats["Pik"].Add(7.5);
-                //jumpStats["Pik"].Add(10);
-
-                //jumpStats.Add("Gruppering", new List<double>()); // C
-                //jumpStats["Gruppering"].Add(1);
-                //jumpStats["Gruppering"].Add(3);
-                //jumpStats["Gruppering"].Add(5);
-                //jumpStats["Gruppering"].Add(7.5);
-                //jumpStats["Gruppering"].Add(10);
-
-                //jumpStats.Add("Valfri", new List<double>()); // D
-                //jumpStats["Valfri"].Add(1);
-                //jumpStats["Valfri"].Add(3);
-                //jumpStats["Valfri"].Add(5);
-                //jumpStats["Valfri"].Add(7.5);
-                //jumpStats["Valfri"].Add(10);
-
                 jumpStats.Add(1, "Rak");
                 jumpStats.Add(2, "Pik");
                 jumpStats.Add(3, "Gruppering");
                 jumpStats.Add(4, "Valfri");
-
-                //END OF JumpStats
-
             }
             catch (ArgumentException)
             {
@@ -103,7 +57,7 @@ namespace simhopp
             }
             return jumpStats;
         }
-        //startPos
+
         public string ShowContentsStartPos() //printing elements in Class
         {
             var sb = new StringBuilder();
@@ -139,29 +93,14 @@ namespace simhopp
         }
         public SortedDictionary<int, List<string>> addjumpCombination() // Adding information to the jumpCombination dictionary
         {
-            jumpCombination.Add(1, new List<string>());
-            jumpCombination[1].Add("Flygande");
-            jumpCombination[1].Add("Ej Flygande");
-            jumpCombination.Add(2, new List<string>());
-            jumpCombination[2].Add("Flygande");
-            jumpCombination[2].Add("Ej Flygande");
-            jumpCombination.Add(3, new List<string>());
-            jumpCombination[3].Add("Flygande");
-            jumpCombination[3].Add("Ej Flygande");
-            jumpCombination.Add(4, new List<string>());
-            jumpCombination[4].Add("Flygande");
-            jumpCombination[4].Add("Ej Flygande");
-            jumpCombination.Add(5, new List<string>());
-            jumpCombination[5].Add("Framåt");
-            jumpCombination[5].Add("Bakåt");
-            jumpCombination[5].Add("Isander/Mollbergare");
-            jumpCombination[5].Add("Tyska");
-            jumpCombination.Add(6, new List<string>());
-            jumpCombination[6].Add("Framåt");
-            jumpCombination[6].Add("Bakåt");
-            jumpCombination[6].Add("Mellanhopp");
 
-
+            jumpCombination.Add(1, new List<string>() { "Flygande", "EjFlygande" });
+            jumpCombination.Add(2, new List<string>() { "Flygande", "EjFlygande" });
+            jumpCombination.Add(3, new List<string>() { "Flygande", "EjFlygande" });
+            jumpCombination.Add(4, new List<string>() {"Flygande","EjFlygande"});
+            jumpCombination.Add(5, new List<string>() {"Framåt","Bakåt","Isander/Mollbergare","Tyska"});
+            jumpCombination.Add(6, new List<string>() {"Framåt","Bakåt","Mellanhopp"});
+           
             return jumpCombination;
         }
         //qtyFlipps
@@ -231,65 +170,51 @@ namespace simhopp
 
         public SortedDictionary<int, List<double>> addqtyScrews() // adding information to the qtyScrews dictionary
         {
-            qtyScrews.Add(5, new List<double>());
-            qtyScrews[5].Add(0);
-            qtyScrews[5].Add(0.5);
-            qtyScrews[5].Add(1);
-            qtyScrews[5].Add(1.5);
-            qtyScrews[5].Add(2);
-            qtyScrews[5].Add(2.5);
-            qtyScrews[5].Add(3);
-            qtyScrews[5].Add(3.5);
-            qtyScrews[5].Add(4);
-            qtyScrews[5].Add(4.5);
-            qtyScrews[5].Add(5);
-            qtyScrews.Add(6, new List<double>());
-            qtyScrews[6].Add(0);
-            qtyScrews[6].Add(0.5);
-            qtyScrews[6].Add(1);
-            qtyScrews[6].Add(1.5);
-            qtyScrews[6].Add(2);
-            qtyScrews[6].Add(2.5);
-            qtyScrews[6].Add(3);
-            qtyScrews[6].Add(3.5);
-            qtyScrews[6].Add(4);
-            qtyScrews[6].Add(4.5);
-            qtyScrews[6].Add(5);
-
+            qtyScrews.Add(5, new List<double>() { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 });
+            qtyScrews.Add(6, new List<double>() { 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 });
             return qtyScrews;
         }
 
 
-        public string createCompleteJump(double vID, string v2ID, params int[] kID) //inmatni3ng blir (2.5,"tyska",5........); 
+        //public string createCompleteJump(int kID, int kID2, int kID3, int kID4, int kID5, double vScrews, string vJumpCombo,)
+        public string createCompleteJump(int kID, int kID2, string vJumpCombo, int kID3, int kID4, double vScrews, int kID5, int kID6) //inmatning blir (2.5,"tyska",5........); 
         {
-            // List<int> kID = new List<int>(); // Key ID
-
-            var myKey = startPos[kID[0]];
-            var myKey2 = jumpCombination[kID[1]].FirstOrDefault(y => y == v2ID);
-            var myKey3 = qtyFlips[kID[2]];
-            var myKey4 = qtyScrews[kID[3]].FirstOrDefault(y => y == vID);
-            var myKey5 = jumpStats[kID[4]];
-            var myKey6 = jumpHeight[kID[5]];
-
-
-
-            //var myKey = addqtyScrews().FirstOrDefault(x => x.Key == kID && x.Value.Contains(vID)).Value;
-
+            var fail = "Invalid Selection of Jump!!!";
+            var myKey = startPos[kID];
+            var myKey2 = jumpCombination[kID2].FirstOrDefault(y => y == vJumpCombo);
+            var myKey3 = qtyFlips[kID3];
+            var myKey4 = qtyScrews[kID4].FirstOrDefault(y => y == vScrews);
+            var myKey5 = jumpStats[kID5];
+            var myKey6 = jumpHeight[kID6];
             var str = $"{myKey} {myKey2} {myKey3} {myKey4} {myKey5} {myKey6}";
-            //Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2 + " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
-            // var points = myKey + myKey2 + myKey3 + myKey4 + myKey5;
-            //Console.Write("\nCompleteJump:" + str);
+            switch (kID) // Constraints
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    kID4 = 0;
+                    if (kID2 == 5 || kID2 == 6)
+                    {
+                        return fail;
+                    }
+                    break;
+                case 5:
+                case 6:
+                    if (kID2 == 1 || kID2 == 2 || kID2 == 3 || kID2 == 4)
+                    {
+                        return fail;
+                    }
+                    break;
+            }
+            
 
+            //Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2 + " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
+            // Console.Write("\nCompleteJump:" + str);
             return str;
         }
 
-
-        public string returnJump()
-        {
-            Console.WriteLine("\n\n\n---ANDRA VALET ---- \n\n");
-            return createCompleteJump(5, "Isander/Mollbergare", 5, 5, 3, 4);
-        }
-
+        
 
 
         public double getDifficulty(string diveNumber)
