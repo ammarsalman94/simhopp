@@ -200,15 +200,18 @@ namespace simhopp
                     }
                     break;
                 case 5:
+                    if (kID2 != 5)
+                    {
+                        return fail;
+                    }
+                    break;
                 case 6:
-                    if (kID2 == 1 || kID2 == 2 || kID2 == 3 || kID2 == 4)
+                    if (kID2 != 6)
                     {
                         return fail;
                     }
                     break;
             }
-            
-
             //Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2 + " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
             // Console.Write("\nCompleteJump:" + str);
             return str;
