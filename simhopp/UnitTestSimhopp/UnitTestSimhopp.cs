@@ -307,10 +307,10 @@ namespace UnitTestSimhopp
         {
             var jumpType = new JumpType();
 
-          //  Console.WriteLine(jumpType.createCompleteJump(2.5,"Tyska",5,5,3,5,2,2).ToString());
-           // string jump = jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
+            Console.WriteLine(jumpType.createCompleteJump(5, 5, "Tyska", 3, 5, 2.5, 1, 3).ToString());
+            string jump = jumpType.createCompleteJump(5, 5, "Tyska", 3, 5, 2.5, 1, 3);
             Console.WriteLine("Difficulty for (Skruvhopp Tyska 1 2,5 Pik 3): ");
-            //Console.WriteLine(jumpType.getDifficulty(jump));
+            Console.WriteLine(jumpType.getDifficulty(jump));
         }
 
         [TestMethod]
@@ -319,17 +319,14 @@ namespace UnitTestSimhopp
             var jumpType = new JumpType();
             var Points = new Points();
 
-        //    Console.WriteLine(jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2).ToString());
-          //  string jump = jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
-           // Console.Write("Difficulty for (Skruvhopp Tyska 1 2,5 Pik 3): ");
-            //Console.WriteLine(jumpType.getDifficulty(jump));
-           // double Diff = jumpType.getDifficulty(jump);
+            Console.WriteLine(jumpType.createCompleteJump(5, 5, "Tyska", 3, 5, 2.5, 1, 3).ToString());
+            string jump = jumpType.createCompleteJump(5, 5, "Tyska", 3, 5, 2.5, 1, 3);
+            Console.Write("Difficulty for (5,5,Tyska,3,5,2.5,1,3): ");
+            Console.WriteLine(jumpType.getDifficulty(jump));
+            double Diff = jumpType.getDifficulty(jump);
             Console.Write("Points for jump: ");
-            //Console.Write(Points.pointResult(3.3, 5, 4, 7, 8, Diff));
+            Console.Write(Points.pointResult(3.3, 5, 4, 7, 8, Diff));
         }
-
-    }
-}
 
     }
 }
