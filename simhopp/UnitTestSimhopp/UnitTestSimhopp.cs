@@ -330,12 +330,14 @@ namespace UnitTestSimhopp
             obj.addJumpTypeToCompetitor(3,1, 1, "Flygande", 3, 5, 3.5, 1, 4);
             obj.addJumpTypeToCompetitor(4, 2, 2, "EjFlygande", 3, 5, 3.5, 1, 4);
 
-            obj.printCompetitorJumps();
 
-            //Console.WriteLine("Search for id that exists:");
-            //obj.searchCompetitorjumps(2);
-            //Console.WriteLine("Search for id that does not exist:");
-            //obj.searchCompetitorjumps(200);
+
+            //obj.printCompetitorJumps();
+
+            Console.WriteLine("Search for id that exists:");
+            obj.searchCompetitorjumps(2);
+            Console.WriteLine("Search for id that does not exist:");
+            obj.searchCompetitorjumps(200);
 
             Assert.AreEqual(6,obj.countCompetitorJumps());
 
