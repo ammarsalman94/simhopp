@@ -76,19 +76,15 @@ namespace simhopp
         }
 
 
-        public void addJumpTypeToCompetitor(double var, string jumpstyle, int var1, int var2, int var3, int var4, int var5, int var6)
+        public void addJumpTypeToCompetitor(int var1, int var2, string jumpstyle, int var3, int var4, double var5, int var6, int var7)
         {
-  
             var obj1 = new JumpType();
-       //     var holdJump = obj1.createCompleteJump(var, jumpstyle, var1, var2, var3, var4, var5, var6);
-
-       //    competitorJumps.Add(getJumpNextID(), holdJump);
-
+            var holdJump = obj1.createCompleteJump(var1, var2, jumpstyle, var3, var4, var5, var6, var7);
+            competitorJumps.Add(getJumpNextID(), holdJump);
         }
-        
-      public void printCompetitorJumps()
-        {
 
+        public void printCompetitorJumps()
+        {
             foreach (var obj in competitorJumps)
             {
                 Console.WriteLine($"ChangeIt: {obj.Key} , {obj.Value}");
@@ -99,9 +95,7 @@ namespace simhopp
         public int countCompetitorJumps()//counts amount of jumps
         {
             int count = 0;
-
             count = competitorJumps.Count();
-
             return count;
         }
 
