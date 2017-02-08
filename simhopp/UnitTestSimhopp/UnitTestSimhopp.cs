@@ -114,8 +114,8 @@ namespace UnitTestSimhopp
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
-            jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
-
+            var res = jumpType.createCompleteJump(5,5,"Tyska",3,5,3.5,1,4);
+            Console.Write(res);
         }
 
 
@@ -125,7 +125,7 @@ namespace UnitTestSimhopp
         {
             var points = new Points();
 
-            Assert.AreEqual(180, points.pointResult(1.6, 2, 6, 10, 34));
+            Assert.AreEqual(180, points.pointResult(1.6, 2, 6, 10, 3,4));
 
 
         }
@@ -306,10 +306,10 @@ namespace UnitTestSimhopp
         {
             var jumpType = new JumpType();
 
-            Console.WriteLine(jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2).ToString());
-            string jump = jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
+         //   Console.WriteLine(jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2).ToString());
+           // string jump = jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
             Console.WriteLine("Difficulty for (Skruvhopp Tyska 1 2,5 Pik 3): ");
-            Console.WriteLine(jumpType.getDifficulty(jump));
+            //Console.WriteLine(jumpType.getDifficulty(jump));
         }
 
 
