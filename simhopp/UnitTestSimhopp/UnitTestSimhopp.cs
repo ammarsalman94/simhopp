@@ -114,8 +114,8 @@ namespace UnitTestSimhopp
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
-       //     jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
-
+            var res = jumpType.createCompleteJump(5,5,"Tyska",3,5,3.5,1,4);
+            Console.Write(res);
         }
 
 
