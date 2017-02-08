@@ -330,6 +330,3 @@ namespace UnitTestSimhopp
 
     }
 }
-
-    }
-}
