@@ -88,29 +88,29 @@ namespace UnitTestSimhopp
         {
             var jumpType = new JumpType();
 
-            Console.WriteLine("-----     StartPos[0]       -----");
-            SortedDictionary<int, string> s = jumpType.addStartPos();
-            Console.WriteLine(jumpType.ShowContentsStartPos());
+            //Console.WriteLine("-----     StartPos[0]       -----");
+            //SortedDictionary<int, string> s = jumpType.addStartPos();
+            //Console.WriteLine(jumpType.ShowContentsStartPos());
 
-            Console.WriteLine("-----     jumpCombo[1]       -----");
-            SortedDictionary<int, List<string>> d = jumpType.addjumpCombination();
-            Console.WriteLine(jumpType.ShowContentsjumpCombination());
+            //Console.WriteLine("-----     jumpCombo[1]       -----");
+            //SortedDictionary<int, List<string>> d = jumpType.addjumpCombination();
+            //Console.WriteLine(jumpType.ShowContentsjumpCombination());
 
-            Console.WriteLine("-----     qtyFlips[2]       -----");
-            SortedDictionary<int, double> e = jumpType.addqtyFlips();
-            Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
+            //Console.WriteLine("-----     qtyFlips[2]       -----");
+            //SortedDictionary<int, double> e = jumpType.addqtyFlips();
+            //Console.WriteLine(jumpType.ShowContentsaddqtyFlips());
 
-            Console.WriteLine("-----     qtyScrews[3]       -----");
-            SortedDictionary<int, List<double>> h = jumpType.addqtyScrews();
-            Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
+            //Console.WriteLine("-----     qtyScrews[3]       -----");
+            //SortedDictionary<int, List<double>> h = jumpType.addqtyScrews();
+            //Console.WriteLine(jumpType.ShowContentsaddqtyScrews());
 
-            Console.WriteLine("-----     jumpstats[4]       -----");
-            SortedDictionary<int, string> g = jumpType.addjumpStats();
-            Console.WriteLine(jumpType.ShowContentsjumpStats());
+            //Console.WriteLine("-----     jumpstats[4]       -----");
+            //SortedDictionary<int, string> g = jumpType.addjumpStats();
+            //Console.WriteLine(jumpType.ShowContentsjumpStats());
 
-            Console.WriteLine("-----     jumpHeight[5]       -----");
-            SortedDictionary<int, double> f = jumpType.addjumpHeight();
-            Console.WriteLine(jumpType.ShowContentsaddjumpHeight());
+            //Console.WriteLine("-----     jumpHeight[5]       -----");
+            //SortedDictionary<int, double> f = jumpType.addjumpHeight();
+            //Console.WriteLine(jumpType.ShowContentsaddjumpHeight());
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
@@ -300,6 +300,18 @@ namespace UnitTestSimhopp
 
             Assert.AreEqual(5, competition.countOldCompetitions());
         }
+
+        [TestMethod]
+        public void testGetDifficulty()
+        {
+            var jumpType = new JumpType();
+
+            Console.WriteLine(jumpType.createCompleteJump(2.5,"Tyska",5,5,3,5,2,2).ToString());
+            string jump = jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
+            Console.WriteLine("Difficulty for (Skruvhopp Tyska 1 2,5 Pik 3): ");
+            Console.WriteLine(jumpType.getDifficulty(jump));
+            }
+
 
     }
 }
