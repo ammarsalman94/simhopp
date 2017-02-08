@@ -114,8 +114,9 @@ namespace simhopp
             
             if (competitorJumps.ContainsKey(id))
             {
-
-                Console.WriteLine($"{competitorJumps.ContainsKey(id)}");
+                competitorJumps.ElementAt(id);
+                Console.WriteLine($"{competitorJumps.ElementAt(id-1)}");
+              
 
 
             }
