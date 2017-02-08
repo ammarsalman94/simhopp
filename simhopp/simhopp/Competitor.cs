@@ -11,13 +11,14 @@ namespace simhopp
     {
         //Declaring Variables
         static int competitorId = 1;
+        static int jumpId = 1;
         public string name { get; set; } = "";
         public int age { get; set; } = 0;
         public int id { get; set; } = 0;
         public int qtyOfJumps { get; set; } = 0;
 
         // private float jumptype and score;
-        public Dictionary<string, double> competitorJumps = new Dictionary<string, double>();
+        public Dictionary<int, string> competitorJumps = new Dictionary<int, string>();
 
         public Competitor(string name, int age) //Constructor
         {
@@ -45,6 +46,10 @@ namespace simhopp
         {
             return competitorId++;
         }
+        protected int getJumpNextID() // pointing to the next id, useful when adding more competitor-information.
+        {
+            return jumpId++;
+        }
 
         public void addCompetitor() // Creating new competitor
         {
@@ -71,22 +76,13 @@ namespace simhopp
         }
 
 
-        public void addJumpTypeToCompetitor( double point6)
+        public void addJumpTypeToCompetitor(double var, string jumpstyle, int var1, int var2, int var3, int var4, int var5, int var6)
         {
-
-            
+  
             var obj1 = new JumpType();
-           //var holdJump = obj1.createCompleteJump(point1, point2, point3, point4, point5);
-            
-         
-            var obj2 = new Points();
-            var holdPoint = obj2.addPoint(point6);
+            var holdJump = obj1.createCompleteJump(var, jumpstyle, var1, var2, var3, var4, var5, var6);
 
-            
-           competitorJumps.Add(obj1.createCompleteJump(2.5,"Tyska",5,3,5,2,3), obj2.addPoint(point6));
-
-            
-
+           competitorJumps.Add(getJumpNextID(), holdJump);
 
         }
         
@@ -95,7 +91,7 @@ namespace simhopp
 
             foreach (var obj in competitorJumps)
             {
-                Console.WriteLine($"Name: {obj.Key} , {obj.Value}");
+                Console.WriteLine($"ChangeIt: {obj.Key} , {obj.Value}");
             }
 
         }
@@ -107,6 +103,33 @@ namespace simhopp
             count = competitorJumps.Count();
 
             return count;
+        }
+
+        //public void searchCompetitorjumps(int id)
+        //{
+        //    if (competitorJumps.ContainsKey(id))
+        //    {
+        //        Console.WriteLine($"{id}");
+        //        competitorJumps.ContainsValue();
+
+        //    }
+        //}
+
+        public void searchCompetitorjumps(int id)
+        {
+            if (competitorJumps.ContainsKey(id))
+            {
+                foreach (var obj in competitorJumps)
+                {
+    
+                    Console.WriteLine($"{obj.Key}{obj.Value}");
+                } 
+
+            }
+            else
+            {
+                Console.WriteLine("Id does not exist");
+            }
         }
     }
 }

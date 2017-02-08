@@ -15,7 +15,7 @@ namespace UnitTestSimhopp
         public void testCompetition()
         {
             var game = new Competition("Wt-game");
-      
+
             //Test list for competitor if empty or not
             var competitor1 = new Competitor("Joel", 12);
             var competitor2 = new Competitor("frans", 12);
@@ -34,7 +34,7 @@ namespace UnitTestSimhopp
 
 
             Assert.AreEqual(6, game.countJumps());
-            
+
 
             //Test list for judges if empty or not
             var judge1 = new Judge("Joel", 12);
@@ -66,9 +66,9 @@ namespace UnitTestSimhopp
             var judge4 = new Judge("carl", 12);
             var judge5 = new Judge("bertil", 12);
             var judge6 = new Judge("kjell", 14);
-            
 
-      
+
+
         }
 
         [TestMethod]
@@ -114,11 +114,11 @@ namespace UnitTestSimhopp
 
             Console.WriteLine("-----     Create Complete Jump       -----");
 
-            jumpType.createCompleteJump(2.5,"Tyska",5,5,3,5,2,2);
+            jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
 
         }
 
-        
+
 
         [TestMethod]
         public void testPoints()
@@ -238,7 +238,7 @@ namespace UnitTestSimhopp
             var oldcompetition = new StoreCompetition();
 
             var game1 = new Competition("Wt-game1");
-            var game2= new Competition("Wt-game2");
+            var game2 = new Competition("Wt-game2");
             var game3 = new Competition("Wt-game3");
             var game4 = new Competition("Wt-game4");
             var game5 = new Competition("Wt-game5");
@@ -306,12 +306,39 @@ namespace UnitTestSimhopp
         {
             var jumpType = new JumpType();
 
-            Console.WriteLine(jumpType.createCompleteJump(2.5,"Tyska",5,5,3,5,2,2).ToString());
+            Console.WriteLine(jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2).ToString());
             string jump = jumpType.createCompleteJump(2.5, "Tyska", 5, 5, 3, 5, 2, 2);
             Console.WriteLine("Difficulty for (Skruvhopp Tyska 1 2,5 Pik 3): ");
             Console.WriteLine(jumpType.getDifficulty(jump));
-            }
+        }
 
+
+
+
+        [TestMethod]
+        public void testAddJumpToCompetitor213()
+        {
+            var obj = new Competitor("frans", 23);
+
+            obj.addJumpTypeToCompetitor(1, "Skruvhopp", 4, 5, 3, 5, 2, 2);
+
+            obj.addJumpTypeToCompetitor(5, "Bakåt", 5, 5, 3, 5, 2, 2);
+
+            obj.addJumpTypeToCompetitor(2, "Tyska", 5, 5, 3, 5, 2, 2);
+            obj.addJumpTypeToCompetitor(3, "Skruvhopp", 5, 5, 3, 5, 2, 2);
+           obj.addJumpTypeToCompetitor(2.5, "Tyska", 5, 4, 3, 5, 2, 2);
+            obj.addJumpTypeToCompetitor(4, "Skruvhopp", 5, 5, 3, 5, 2, 2);
+
+            obj.printCompetitorJumps();
+            Console.WriteLine("Search for id that exists:");
+            obj.searchCompetitorjumps(2);
+            Console.WriteLine("Search for id that does not exist:");
+            obj.searchCompetitorjumps(200);
+
+            Assert.AreEqual(6,obj.countCompetitorJumps());
+
+        }
 
     }
 }
+
