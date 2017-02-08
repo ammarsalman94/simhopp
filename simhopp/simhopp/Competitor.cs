@@ -117,13 +117,12 @@ namespace simhopp
 
         public void searchCompetitorjumps(int id)
         {
+            
             if (competitorJumps.ContainsKey(id))
             {
-                foreach (var obj in competitorJumps)
-                {
-    
-                    Console.WriteLine($"{obj.Key}{obj.Value}");
-                } 
+
+                Console.WriteLine($"{competitorJumps.ContainsKey(id)}");
+
 
             }
             else
