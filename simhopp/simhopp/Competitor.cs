@@ -44,10 +44,12 @@ namespace simhopp
         {
 
         }
+
         protected int getcompetitorNextID() // pointing to the next id, useful when adding more competitor-information.
         {
             return competitorId++;
         }
+
         protected int getJumpNextID() // pointing to the next id, useful when adding more competitor-information.
         {
             return jumpId++;
@@ -71,24 +73,21 @@ namespace simhopp
 
         }
 
-
         public void sendInfoToJudge() //send info about competitor to judge
         {
 
         }
-
 
         public void addJumpTypeToCompetitor(double point, int var1, int var2, string jumpstyle, int var3, int var4, double var5, int var6, int var7)
         {
             var obj1 = new JumpType();
             var holdJump = obj1.createCompleteJump(var1, var2, jumpstyle, var3, var4, var5, var6, var7);
             var points = new Points();
-            var holdPoint = points.SendPointToCompetitor(2);
+            var holdPoint = points.SendPointToCompetitor(point);
            
 
             competitorJumps.Add(getJumpNextID(), new Dictionary<string, double>() { { holdJump, holdPoint} });
-                
-               
+                      
         }
 
 
@@ -107,7 +106,7 @@ namespace simhopp
                 foreach (var innerpair in pair.Value)
                 {
                     
-                    Console.WriteLine("{0},{1},{2}", pair.Key, innerpair.Key, innerpair.Value);
+                    Console.WriteLine($"{pair.Key,20} : {innerpair.Key,20} : {innerpair.Value}");
 
                 }
                 
@@ -124,38 +123,43 @@ namespace simhopp
 
 
 
-        //    public void searchCompetitorjumps(int id)
-        //    {
-
-        //        if (competitorJumps.ContainsKey(id))
-        //        {
-        //            competitorJumps.ElementAt(id);
-        //            Console.WriteLine($"{competitorJumps.ElementAt(id-1)}");
-        //        }
-
-        //        else
-        //        {
-        //            Console.WriteLine("Id does not exist");
-        //        }
-        //    }
+        
 
 
         public void searchCompetitorjumps(int id)
         {
+            foreach (var pair in competitorJumps)
+            {
+                // Console.WriteLine($"jumpid: {obj.Keys}");
+                if (pair.Key == id)
+                {
 
+                    foreach (var innerpair in pair.Value)
+                    {
+
+
+                        Console.WriteLine("{0},{1},{2}", pair.Key, innerpair.Key, innerpair.Value);
+
+                    } 
+                }
+
+            }
+
+        }
+
+
+        public void removeCompetitorjumps(int id)
+        {
             if (competitorJumps.ContainsKey(id))
             {
-               var pri = competitorJumps.ElementAt(id);
-                Console.WriteLine($"{competitorJumps.ElementAt(id - 1)}");
-                
-            }
+                competitorJumps.Remove(id); 
 
-            else
-            {
-                Console.WriteLine("Id does not exist");
-            }
+             }
+           
+
         }
     }
 }
+
 
 

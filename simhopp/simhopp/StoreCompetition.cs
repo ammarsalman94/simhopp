@@ -16,21 +16,21 @@ namespace simhopp
             oldCompetitionList.Add(obj);
         }
 
-        public void printCompetitionList()
+        public void printOldCompetitionList()
         {
-            Console.WriteLine("Oldcompetitorlist");
+
 
             foreach (var obj in oldCompetitionList)
             {
-               Console.WriteLine($"test: { obj.name.ToString()} , { obj.id.ToString()}");
+                Console.WriteLine($"Oldcompetition: { obj.name.ToString()} , { obj.id.ToString()}");
             }
         }
 
         private void addCompetionFromFile()
         {
-            
-        } 
-         
+
+        }
+
         private void loadCompetition()
         {
 
@@ -49,8 +49,6 @@ namespace simhopp
             }
         }
 
-
-
         public int countOldCompetitions()//counts amount of jumps
         {
             int count = 0;
@@ -59,5 +57,23 @@ namespace simhopp
 
             return count;
         }
+
+        //public void printInfoAboutOldCompetition(string nameCompetition)
+        //{
+
+        //    Console.WriteLine("Information about old competition: ");
+        //    var competition = new Competition(nameCompetition);
+
+        //    foreach (var obj in oldCompetitionList)
+        //    {
+
+        //        if (obj.name == nameCompetition)
+        //        {
+        //            competition.printFullCompetition();
+        //        } 
+        //    }
+        //}
+
+
     }
 }

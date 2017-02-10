@@ -18,6 +18,7 @@ namespace simhopp
         public string name;
         private List<Competitor> competitorList = new List<Competitor>();
         private List<Judge> judgeList = new List<Judge>();
+       
         //Functions
         public Competition(string name) //Creating competition
         {
@@ -30,6 +31,7 @@ namespace simhopp
         {
             return competitionId++;
         }
+
         public void removeCompetitorFromList(int unId)
         {
 
@@ -41,6 +43,7 @@ namespace simhopp
                 }
             }
         }
+
         public void removeJudgeFromList(int unId)
         {
 
@@ -52,6 +55,7 @@ namespace simhopp
                 }
             }
         }
+
         public void printCompetitorList()
         {
             Console.WriteLine("Competitorlist");
@@ -59,6 +63,9 @@ namespace simhopp
             foreach (var obj in competitorList)
             {
                 Console.WriteLine($"Name: { obj.name.ToString()} , Age: { obj.age.ToString()}, Id: { obj.id.ToString()}");
+                Console.WriteLine("-----------------------------------------------------------------------------");
+                obj.printCompetitorJumps();
+                Console.WriteLine("-----------------------------------------------------------------------------");
             }
         }
 
@@ -82,7 +89,7 @@ namespace simhopp
             judgeList.Add(obj);
         }
 
-        public int countJumps()//counts amount of jumps
+        public int countCompetitorsInCompetition()//counts amount of jumps
         {
             int count = 0;
 
@@ -98,6 +105,16 @@ namespace simhopp
             count = judgeList.Count();
 
             return count;
+        }
+
+        public void printFullCompetition()
+        {
+            Console.WriteLine($"{id, 10} : {name, 10}");
+            printJudgeList();
+            printCompetitorList();
+
+
+            
         }
 
     }
