@@ -10,18 +10,6 @@ namespace simhopp
     {
         public double points{ get; set; } = 0; //getters n setters, plus default
 
-
-        public void getInfoJump() //getting information about the jump, height, type etc.
-        {
-            
-        }
-
-        public void pointConstraints() //Different constraints revolving the point-distribution.
-        {
-            
-        }
-
-
         public double pointResult(double j1,double j2,double j3, double j4, double j5, double difficulty) //returning the result to the judge
         {
             double n = 0;
@@ -45,7 +33,6 @@ namespace simhopp
 
         public double SendPointToCompetitor(double point)
         {
-
 
             this.points = points;
             return point;
