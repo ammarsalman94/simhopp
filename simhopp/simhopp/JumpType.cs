@@ -186,14 +186,14 @@ namespace simhopp
             var myKey4 = qtyScrews[kID4].FirstOrDefault(y => y == vScrews);
             var myKey5 = jumpStats[kID5];
             var myKey6 = jumpHeight[kID6];
-            var str = $"{myKey} {myKey2} {myKey3} {myKey4} {myKey5} {myKey6}";
+
             switch (kID) // Constraints
             {
                 case 1:
                 case 2:
                 case 3:
                 case 4:
-                    kID4 = 0;
+                    myKey4 = 0;
                     if (kID2 == 5 || kID2 == 6)
                     {
                         return fail;
@@ -212,6 +212,7 @@ namespace simhopp
                     }
                     break;
             }
+            var str = $"{myKey} {myKey2} {myKey3} {myKey4} {myKey5} {myKey6}";
             //Console.Write("StartPos: " + myKey + " jumpCombo: " + myKey2 + " Flips: " + myKey3 + " Screws: " + myKey4 + " jumpStats: " + myKey5 + " JumpHeight: " + myKey6);
             // Console.Write("\nCompleteJump:" + str);
             return str;
