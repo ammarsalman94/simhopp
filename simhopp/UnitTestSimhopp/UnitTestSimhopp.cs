@@ -278,6 +278,7 @@ namespace UnitTestSimhopp
             var judge4 = new Judge("carl", 12);
             var judge5 = new Judge("bertil", 12);
             var judge6 = new Judge("kjell", 14);
+
             //Test list for competitor if empty or not
             var competitor1 = new Competitor("Joel", 12);
             var competitor2 = new Competitor("frans", 12);
@@ -329,20 +330,25 @@ namespace UnitTestSimhopp
             obj.addJumpTypeToCompetitor(1,5, 5, "Bakåt", 3, 5, 3.5, 1, 3);
 
             obj.addJumpTypeToCompetitor(1,6, 6, "Framåt", 3, 5, 3.5, 1, 1);
+
             obj.addJumpTypeToCompetitor(2,5, 5, "Mellanhopp", 3, 5, 3.5, 1, 2);
             obj.addJumpTypeToCompetitor(3,1, 1, "Flygande", 3, 5, 3.5, 1, 4);
             obj.addJumpTypeToCompetitor(4, 2, 2, "EjFlygande", 3, 5, 3.5, 1, 4);
 
 
-
-            //obj.printCompetitorJumps();
+            Console.WriteLine("first print:");
+            obj.printCompetitorJumps();
 
             Console.WriteLine("Search for id that exists:");
             obj.searchCompetitorjumps(2);
             Console.WriteLine("Search for id that does not exist:");
             obj.searchCompetitorjumps(200);
 
-            Assert.AreEqual(6,obj.countCompetitorJumps());
+            obj.removeCompetitorjumps(1);
+            Console.WriteLine("after removing print:");
+            obj.printCompetitorJumps();
+
+            Assert.AreEqual(5,obj.countCompetitorJumps());
 
         }
 

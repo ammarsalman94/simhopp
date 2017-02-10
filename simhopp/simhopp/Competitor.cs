@@ -124,39 +124,43 @@ namespace simhopp
 
 
 
-        //    public void searchCompetitorjumps(int id)
-        //    {
-
-        //        if (competitorJumps.ContainsKey(id))
-        //        {
-        //            competitorJumps.ElementAt(id);
-        //            Console.WriteLine($"{competitorJumps.ElementAt(id-1)}");
-        //        }
-
-        //        else
-        //        {
-        //            Console.WriteLine("Id does not exist");
-        //        }
-        //    }
+        
 
 
         public void searchCompetitorjumps(int id)
         {
+            foreach (var pair in competitorJumps)
+            {
+                // Console.WriteLine($"jumpid: {obj.Keys}");
+                if (pair.Key == id)
+                {
 
+                    foreach (var innerpair in pair.Value)
+                    {
+
+
+                        Console.WriteLine("{0},{1},{2}", pair.Key, innerpair.Key, innerpair.Value);
+
+                    } 
+                }
+
+            }
+
+        }
+
+
+        public void removeCompetitorjumps(int id)
+        {
             if (competitorJumps.ContainsKey(id))
             {
-               var pri = competitorJumps.ElementAt(id);
-                Console.WriteLine($"{competitorJumps.ElementAt(id - 1)}");
-                
-            }
+                competitorJumps.Remove(id); 
 
-            else
-            {
-                Console.WriteLine("Id does not exist");
-            }
+             }
+           
+
         }
     }
 }
 
 
-}
+
