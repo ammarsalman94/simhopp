@@ -22,15 +22,15 @@ namespace simhopp
         }
 
 
-        public double pointResult(double j1,double j2,double j3, double j4, double j5, double difficulty) //returning the result to the judge
+        public double pointResult(params double[] judgeScore, double difficulty) //returning the result to the judge
         {
             double n = 0;
             List<double> pointList = new List<double>(); 
-            pointList.Add(j1);
-            pointList.Add(j2);
-            pointList.Add(j3);
-            pointList.Add(j4);
-            pointList.Add(j5);
+            pointList.Add(judgeScore[0]);
+            pointList.Add(judgeScore[1]);
+            pointList.Add(judgeScore[2]);
+            pointList.Add(judgeScore[3]);
+            pointList.Add(judgeScore[4]);
 
             pointList.Remove(pointList.Max());
             pointList.Remove(pointList.Min());

@@ -223,6 +223,145 @@ namespace simhopp
         }
 
         
+        
+        public string diveNumberTranslator(string divenumber)
+        {
+            string translatedDiveNumber = "";
+            string Fail = "Error";
+            int i = 0;
+            switch (i)
+            {
+                case 0:
+                    if (divenumber.Split(' ')[i] == "Framåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Bakåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Isander/Mollbergare")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Tyska")
+                        translatedDiveNumber += "1 ";
+                    else
+                        translatedDiveNumber += Fail;
+                    i++;
+                    break;
+                case 1:
+                    if (divenumber.Split(' ')[i] == "Framåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Bakåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Isander/Mollbergare")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Tyska")
+                        translatedDiveNumber += "1 ";
+                    else
+                        translatedDiveNumber += Fail;
+                    i++;
+                    break;
+
+                case 2:
+                    if (divenumber.Split(' ')[i] == "Framåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Bakåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Isander/Mollbergare")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Tyska")
+                        translatedDiveNumber += "1 ";
+                    else
+                        translatedDiveNumber += Fail;
+                    i++;
+                    break;
+
+                case 3:
+                    if (divenumber.Split(' ')[i] == "Framåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Bakåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Isander/Mollbergare")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Tyska")
+                        translatedDiveNumber += "1 ";
+                    else
+                        translatedDiveNumber += Fail;
+                    i++;
+                    break;
+
+                case 4:
+                    if (divenumber.Split(' ')[i] == "Framåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Bakåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Isander/Mollbergare")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Tyska")
+                        translatedDiveNumber += "1 ";
+                    else
+                        translatedDiveNumber += Fail;
+                    i++;
+                    break;
+
+                case 5:
+                    if (divenumber.Split(' ')[i] == "Framåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Bakåt")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Isander/Mollbergare")
+                        translatedDiveNumber += "1 ";
+                    else if (divenumber.Split(' ')[i] == "Tyska")
+                        translatedDiveNumber += "1";
+                    else
+                        translatedDiveNumber += Fail;
+                    break;
+            }
+
+
+            return translatedDiveNumber;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         public double getDifficulty(string diveNumber)
