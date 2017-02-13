@@ -36,7 +36,7 @@ namespace simhopp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboJumpComboKey = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -44,6 +44,10 @@ namespace simhopp
             this.jumpTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.jumpTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jumpTypeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboJumpComboValue = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jumpTypeBindingSource)).BeginInit();
@@ -96,14 +100,14 @@ namespace simhopp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // comboJumpComboKey
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(31, 240);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboJumpComboKey.FormattingEnabled = true;
+            this.comboJumpComboKey.Location = new System.Drawing.Point(31, 240);
+            this.comboJumpComboKey.Name = "comboJumpComboKey";
+            this.comboJumpComboKey.Size = new System.Drawing.Size(121, 28);
+            this.comboJumpComboKey.TabIndex = 5;
+            this.comboJumpComboKey.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -158,15 +162,64 @@ namespace simhopp
             // 
             this.jumpTypeBindingSource3.DataSource = typeof(simhopp.JumpType);
             // 
+            // comboJumpComboValue
+            // 
+            this.comboJumpComboValue.FormattingEnabled = true;
+            this.comboJumpComboValue.Location = new System.Drawing.Point(31, 285);
+            this.comboJumpComboValue.Name = "comboJumpComboValue";
+            this.comboJumpComboValue.Size = new System.Drawing.Size(121, 28);
+            this.comboJumpComboValue.TabIndex = 9;
+            this.comboJumpComboValue.SelectedIndexChanged += new System.EventHandler(this.comboJumpComboValue_SelectedIndexChanged);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "7.5m",
+            "10m",
+            "12m"});
+            this.comboBox6.Location = new System.Drawing.Point(185, 285);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 28);
+            this.comboBox6.TabIndex = 10;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "Standing",
+            "Handstand",
+            "Trampoline"});
+            this.comboBox7.Location = new System.Drawing.Point(335, 285);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(121, 28);
+            this.comboBox7.TabIndex = 11;
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Items.AddRange(new object[] {
+            "Standing",
+            "Handstand",
+            "Trampoline"});
+            this.comboBox8.Location = new System.Drawing.Point(482, 285);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(121, 28);
+            this.comboBox8.TabIndex = 12;
+            // 
             // addPlayerToContest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 464);
+            this.Controls.Add(this.comboBox8);
+            this.Controls.Add(this.comboBox7);
+            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.comboJumpComboValue);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboJumpComboKey);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -196,8 +249,12 @@ namespace simhopp
         private System.Windows.Forms.ComboBox comboBox4;
         private BindingSource jumpTypeBindingSource;
         private BindingSource jumpTypeBindingSource1;
-        public ComboBox comboBox1;
+        public ComboBox comboJumpComboKey;
         private BindingSource jumpTypeBindingSource2;
         private BindingSource jumpTypeBindingSource3;
+        public ComboBox comboJumpComboValue;
+        private ComboBox comboBox6;
+        private ComboBox comboBox7;
+        private ComboBox comboBox8;
     }
 }

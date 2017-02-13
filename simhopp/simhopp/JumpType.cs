@@ -93,14 +93,18 @@ namespace simhopp
         }
         public SortedDictionary<int, List<string>> addjumpCombination() // Adding information to the jumpCombination dictionary
         {
+            if (!jumpCombination.ContainsKey(1))
+            {
+                jumpCombination.Add(1, new List<string>() { "Flygande", "EjFlygande" });
+                  
+            }
+            //jumpCombination.Add(1, new List<string>() { "Flygande", "EjFlygande" });
+            //jumpCombination.Add(2, new List<string>() { "Flygande", "EjFlygande" });
+            //jumpCombination.Add(3, new List<string>() { "Flygande", "EjFlygande" });
+            //jumpCombination.Add(4, new List<string>() {"Flygande","EjFlygande"});
+            //jumpCombination.Add(5, new List<string>() {"Framåt","Bakåt","Isander/Mollbergare","Tyska"});
+            //jumpCombination.Add(6, new List<string>() {"Framåt","Bakåt","Mellanhopp"});
 
-            jumpCombination.Add(1, new List<string>() { "Flygande", "EjFlygande" });
-            jumpCombination.Add(2, new List<string>() { "Flygande", "EjFlygande" });
-            jumpCombination.Add(3, new List<string>() { "Flygande", "EjFlygande" });
-            jumpCombination.Add(4, new List<string>() {"Flygande","EjFlygande"});
-            jumpCombination.Add(5, new List<string>() {"Framåt","Bakåt","Isander/Mollbergare","Tyska"});
-            jumpCombination.Add(6, new List<string>() {"Framåt","Bakåt","Mellanhopp"});
-           
             return jumpCombination;
         }
         //qtyFlipps

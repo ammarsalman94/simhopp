@@ -50,5 +50,28 @@ namespace simhopp
             this.points = points;
             return point;
         }
+
+        public double CalculatePointsFromJudge(double difficulty,params double[] val)
+        {
+            double n = 0;
+            int i = val.Count();
+            var calculatedPoints = new List<double>();
+            var judge1 = val[0];
+            var judge2 = val[1];
+            var judge3 = val[2];
+            var judge4 = val[3];
+            var judge5 = val[4];
+            var judge6 = val[5];
+            var judge7 = val[6];
+            var judge8 = val[7];
+            for (int j = 0; j < i; j++) {
+               calculatedPoints.Add(val[i]);
+            }
+
+            calculatedPoints.Remove(calculatedPoints.Max());
+            calculatedPoints.Remove(calculatedPoints.Min());
+            n = calculatedPoints.Sum() * difficulty;
+            return n;
+        }
     }
 }

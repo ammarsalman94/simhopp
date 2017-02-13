@@ -23,10 +23,19 @@ namespace simhopp
 
             if (jt.jumpCombination != null)
             {
-                comboBox1.DataSource = new BindingSource(jt.jumpCombination, null); // Key => null
+                comboJumpComboKey.DataSource = new BindingSource(jt.jumpCombination, null); // Key => null
+                comboJumpComboKey.DisplayMember = "Value";
+                comboJumpComboKey.ValueMember = "Key";
+               // comboJumpComboValue.DataSource = jt.jumpCombination[comboJumpComboKey.SelectedIndex];
+                Console.WriteLine(comboJumpComboKey.SelectedItem);
+                comboJumpComboValue.DataSource = jt.jumpCombination[int.Parse(comboJumpComboKey.Items[comboJumpComboKey.SelectedIndex].ToString())‌​];
+                //    var selectedValues = jt.jumpCombination
+                //            .Where(j => j.Key == Convert.ToInt32(comboJumpComboKey.SelectedIndex.Value))
+                //            .Select(a => a.Value)
+                //            .ToList();
+                //
             }
         }
-
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
@@ -81,11 +90,14 @@ namespace simhopp
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.DataSource = new JumpType().jumpCombination.Keys;
-
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboJumpComboValue_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
