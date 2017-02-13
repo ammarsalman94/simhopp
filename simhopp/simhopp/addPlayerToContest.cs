@@ -14,16 +14,16 @@ namespace simhopp
     public partial class addPlayerToContest : Form
     {
        
-
+        JumpType jt;
         public addPlayerToContest()
         {
             InitializeComponent();
-            JumpType jt = new JumpType();
+            jt = new JumpType();
             jt.addjumpCombination();
 
             if (jt.jumpCombination != null)
             {
-                comboJumpComboKey.DataSource = new BindingSource(jt.jumpCombination, null); // Key => null
+                comboJumpComboKey.DataSource = new BindingSource(jt.jumpCombination.Keys, null); // Key => null
                 comboJumpComboKey.DisplayMember = "Value";
                 comboJumpComboKey.ValueMember = "Key";
                // comboJumpComboValue.DataSource = jt.jumpCombination[comboJumpComboKey.SelectedIndex];
@@ -96,10 +96,18 @@ namespace simhopp
         {
 
         }
-
+        
+        // this is not the one you need to add event handler to, it is the comboJumpComboKey
+        // so double click on that comboBox which will generate another event handler
         private void comboJumpComboValue_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        
+        // this is the new event handler
+        private void comboJumpComboKey_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboJumpComboValue.DataSource = jt.jumpCombination[int.Parse(comboJumpComboKey.Items[comboJumpComboKey.SelectedIndex].ToString()];
         }
     }
 }
